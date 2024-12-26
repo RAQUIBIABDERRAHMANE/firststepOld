@@ -50,6 +50,20 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.embeddedChatbotConfig = {
+                chatbotId: "tamqXSebZmFYi0xoxs5YE",
+                domain: "www.chatbase.co"
+              };
+            `,
+          }}
+        />
+        <script
+          src="https://www.chatbase.co/embed.min.js"
+          defer
+        />
       </body>
     </html>
   );
