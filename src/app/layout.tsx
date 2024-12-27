@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Head from "next/head";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -46,15 +47,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <Head>
+      {/* <link rel="icon" href="/FIRSTSTEP.png" type="image/png" /> */}
+      <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+      </Head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
+        
         <script
           dangerouslySetInnerHTML={{
             __html: `
               window.embeddedChatbotConfig = {
-                chatbotId: "tamqXSebZmFYi0xoxs5YE",
+                chatbotId: "lzqHjXEsbp7OageULY1aa",
                 domain: "www.chatbase.co"
               };
             `,
