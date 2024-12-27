@@ -1,7 +1,6 @@
 'use client'
 // imports start
 import { useState } from 'react'
-import { useUser } from '@clerk/nextjs';  // Import the useUser hook
 import {
   Dialog,
   DialogPanel,
@@ -25,7 +24,6 @@ import {
 import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
 import Image from 'next/image';
 import Link from 'next/link';
-import { ClerkProvider, SignUpButton } from '@clerk/nextjs'
 // imports end
 
 const features = [
@@ -42,11 +40,6 @@ const callsToAction = [
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const { user, isLoaded } = useUser() // Use Clerk's useUser hook
-  // If user data is still loading, show a loading indicator
-  if (!isLoaded) {
-    return <div>Loading...</div>;
-  }
 
   return (
     <header className=" ">
@@ -129,11 +122,7 @@ export default function Navbar() {
           </a>
         </PopoverGroup>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-        {!user ? (
-            <ClerkProvider>
-              <SignUpButton />
-            </ClerkProvider>
-          ) : (<h1>Welcome, {user.firstName}</h1>)}
+          <span>Login</span>
         </div>
       </nav>
       <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">
