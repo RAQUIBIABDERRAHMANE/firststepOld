@@ -3,7 +3,7 @@ export default function Hero() {
   return (
     <div className="bg-white">
 
-      <div className="relative isolate px-6 pt-14 lg:px-8">
+      <div className="relative isolate px-6 lg:px-8 mt-[-90px]" >
         <div
           aria-hidden="true"
           className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
@@ -28,11 +28,10 @@ export default function Hero() {
           </div>
           <div className="text-center">
             <h1 className="text-balance text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl">
-              Data to enrich your online business
+            Make the real first step with First Step.
             </h1>
             <p className="mt-8 text-pretty text-lg font-medium text-gray-500 sm:text-xl/8">
-              Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet
-              fugiat veniam occaecat.
+            First Step delivers cutting-edge management systems for stocks, car rentals, hotels, restaurants, hospitals, and cabinet services. Designed for efficiency and scalability, our platform empowers businesses to streamline operations with ease.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <a
