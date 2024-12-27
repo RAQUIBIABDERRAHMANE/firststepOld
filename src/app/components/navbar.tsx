@@ -1,6 +1,7 @@
 'use client'
-
+// imports start
 import { useState } from 'react'
+import { useUser } from '@clerk/nextjs';  // Import the useUser hook
 import {
   Dialog,
   DialogPanel,
@@ -24,6 +25,8 @@ import {
 import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
 import Image from 'next/image';
 import Link from 'next/link';
+import { ClerkProvider, SignUpButton } from '@clerk/nextjs'
+// imports end
 
 const features = [
   { name: 'Analytics', description: 'Get a better understanding of your traffic', href: '#', icon: ChartPieIcon },
@@ -39,13 +42,18 @@ const callsToAction = [
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const { user, isLoaded } = useUser() // Use Clerk's useUser hook
+  // If user data is still loading, show a loading indicator
+  if (!isLoaded) {
+    return <div>Loading...</div>;
+  }
 
   return (
-    <header className="bg-white ">
+    <header className=" ">
       <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
         <div className="flex lg:flex-1">
           <Link href="#" className="-m-1.5 p-1.5">
-            <span className="sr-only">Your Company</span>
+            <span className="sr-only">First Step</span>
             <Image
               alt=""
               width={50}
@@ -72,7 +80,7 @@ export default function Navbar() {
           </a>
           <Popover className="relative">
             <PopoverButton className="flex items-center gap-x-1 text-sm/6 font-semibold text-gray-900">
-            features
+              features
               <ChevronDownIcon aria-hidden="true" className="size-5 flex-none text-gray-400" />
             </PopoverButton>
 
@@ -121,9 +129,11 @@ export default function Navbar() {
           </a>
         </PopoverGroup>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <Link href="#" className="text-sm/6 font-semibold text-gray-900">
-            Log in <span aria-hidden="true">&rarr;</span>
-          </Link>
+        {!user ? (
+            <ClerkProvider>
+              <SignUpButton />
+            </ClerkProvider>
+          ) : (<h1>Welcome, {user.firstName}</h1>)}
         </div>
       </nav>
       <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">
