@@ -7,7 +7,9 @@ import Stats from "./components/stats";
 export default function Home() {
   return (
     <main className="flex flex-col">
+        <div className="sticky top-0 z-50">
         <Navbar/>
+        </div>
         <Hero/>
         <Stats/>
         <Features/>
