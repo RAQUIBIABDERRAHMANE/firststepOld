@@ -3,7 +3,7 @@ import Hero from "./components/hero";
 import Features from "./components/features";
 import Pricing from "./components/pricing";
 import Stats from "./components/stats";
-
+import Footer from "./components/footer";
 export default function Home() {
   return (
     <main className="flex flex-col">
@@ -14,6 +14,7 @@ export default function Home() {
         <Stats/>
         <Features/>
         <Pricing/>
+        <Footer/>
     </main>
   );
 }

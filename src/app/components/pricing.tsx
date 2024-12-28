@@ -64,7 +64,7 @@ export default function Pricing() {
                     href="javascript:;"
                     className="py-2.5 px-5 bg-indigo-50 shadow-sm rounded-full transition-all duration-500 text-base text-indigo-600 font-semibold text-center w-fit mx-auto group-hover:bg-indigo-600 group-hover:text-white"
                   >
-                    Purchase Plan
+                    Comming Soon
                   </a>
                 </div>
 
@@ -82,7 +82,7 @@ export default function Pricing() {
                     href="javascript:;"
                     className="relative py-2.5 px-5 bg-white shadow-sm rounded-full transition-all duration-500 text-base text-indigo-600 font-semibold text-center w-fit mx-auto"
                   >
-                    Purchase Plan
+                    Comming Soon
                   </a>
                 </div>
 
@@ -97,7 +97,7 @@ export default function Pricing() {
                     href="javascript:;"
                     className="py-2.5 px-5 bg-indigo-50 shadow-sm rounded-full transition-all duration-500 text-base text-indigo-600 font-semibold text-center w-fit mx-auto group-hover:bg-indigo-600 group-hover:text-white"
                   >
-                    Purchase Plan
+                    Comming Soon
                   </a>
                 </div>
               </div>
@@ -117,7 +117,7 @@ export default function Pricing() {
                     href="javascript:;"
                     className="py-2.5 px-5 bg-indigo-50 shadow-sm rounded-full transition-all duration-500 text-base text-indigo-600 font-semibold text-center w-fit mx-auto group-hover:bg-indigo-600 group-hover:text-white"
                   >
-                    Purchase Plan
+                    Comming Soon
                   </a>
                 </div>
 
@@ -135,7 +135,7 @@ export default function Pricing() {
                     href="javascript:;"
                     className="relative py-2.5 px-5 bg-white shadow-sm rounded-full transition-all duration-500 text-base text-indigo-600 font-semibold text-center w-fit mx-auto"
                   >
-                    Purchase Plan
+                    Comming Soon
                   </a>
                 </div>
 
@@ -150,7 +150,7 @@ export default function Pricing() {
                     href="javascript:;"
                     className="py-2.5 px-5 bg-indigo-50 shadow-sm rounded-full transition-all duration-500 text-base text-indigo-600 font-semibold text-center w-fit mx-auto group-hover:bg-indigo-600 group-hover:text-white"
                   >
-                    Purchase Plan
+                    Comming Soon
                   </a>
                 </div>
               </div>
