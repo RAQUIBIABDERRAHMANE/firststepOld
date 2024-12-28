@@ -14,7 +14,7 @@ export default function Pricing() {
           <p className="text-gray-500 text-xl text-center leading-6 mb-12">
             15 Days free trial. No credit card required.
           </p>
-          <div className="mb-10 flex justify-center">
+          {/* <div className="mb-10 flex justify-center">
             <span className="flex items-center">
               <svg
                 className="w-16 h-11"
@@ -31,7 +31,7 @@ export default function Pricing() {
                 Save 20%
               </span>
             </span>
-          </div>
+          </div> */}
 
           {/* Pricing Plan Toggle */}
           <div className="tabs">
@@ -57,8 +57,8 @@ export default function Pricing() {
                 <div className="group relative flex flex-col mx-auto w-full max-w-sm text-gray-900 rounded-2xl border border-solid border-gray-300 text-center transition-all duration-300 p-6 xl:p-12 hover:border-indigo-600">
                   <h3 className="font-manrope text-2xl font-bold mb-6">Free</h3>
                   <div className="mb-20 flex flex-col">
-                    <span className="font-manrope text-6xl font-semibold mb-2">Undefined</span>
-                    <span className="text-xl text-gray-400">Free trial 15 days</span>
+                    <span className="font-manrope text-6xl font-semibold mb-2">0$</span>
+                    <span className="text-xl text-gray-400">Life time</span>
                   </div>
                   <a
                     href="javascript:;"
@@ -110,8 +110,8 @@ export default function Pricing() {
                 <div className="group relative flex flex-col mx-auto w-full max-w-sm text-gray-900 rounded-2xl border border-solid border-gray-300 text-center transition-all duration-300 p-6 xl:p-12 hover:border-indigo-600">
                   <h3 className="font-manrope text-2xl font-bold mb-6">Free</h3>
                   <div className="mb-20 flex flex-col">
-                    <span className="font-manrope text-6xl font-semibold mb-2">Undefined</span>
-                    <span className="text-xl text-gray-400">Free trial 15 days</span>
+                    <span className="font-manrope text-6xl font-semibold mb-2">0$</span>
+                    <span className="text-xl text-gray-400">Life time</span>
                   </div>
                   <a
                     href="javascript:;"
