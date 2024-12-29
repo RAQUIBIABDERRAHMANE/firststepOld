@@ -5,7 +5,7 @@ export default function Pricing() {
   const [isYearly, setIsYearly] = useState(true);
 
   return (
-    <section className="py-24">
+    <section className="py-24" id="pricing">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-12 text-center">
           <h2 className="font-manrope text-5xl text-center font-bold text-gray-900 mb-4">

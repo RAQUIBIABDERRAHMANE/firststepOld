@@ -58,7 +58,7 @@ export default function RootLayout({
             dangerouslySetInnerHTML={{
               __html: `
                 window.embeddedChatbotConfig = {
-                  chatbotId: "lzqHjXEsbp7OageULY1aa",
+                  chatbotId: "QxTmJoHRrXcoXJ_BslByu",
                   domain: "www.chatbase.co"
                 };
               `,

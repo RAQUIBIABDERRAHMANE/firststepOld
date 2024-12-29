@@ -68,9 +68,9 @@ export default function Navbar() {
         </div>
         <PopoverGroup className="hidden lg:flex lg:gap-x-12">
 
-          <a href="#" className="text-sm/6 font-semibold text-gray-900">
+          <Link href="/about" className="text-sm/6 font-semibold text-gray-900">
             Services
-          </a>
+          </Link>
           <Popover className="relative">
             <PopoverButton className="flex items-center gap-x-1 text-sm/6 font-semibold text-gray-900">
               features
@@ -114,7 +114,7 @@ export default function Navbar() {
               </div>
             </PopoverPanel>
           </Popover>
-          <a href="#" className="text-sm/6 font-semibold text-gray-900">
+          <a href="#pricing" className="text-sm/6 font-semibold text-gray-900">
             Pricing
           </a>
           <a href="#" className="text-sm/6 font-semibold text-gray-900">
