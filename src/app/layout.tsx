@@ -46,29 +46,37 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-      <html lang="en">
-        <Head>
-          <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-        </Head>
-        <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        >
-          {children}
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `
+    <html lang="en">
+      <Head>
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+        <script
+          src="https://cdn.jsdelivr.net/npm/tailgrids@2.2.2/plugin.min.js"
+          async
+        ></script>
+        <link
+          href="https://cdn.jsdelivr.net/npm/tailgrids@2.2.2/assets/css/tailwind.min.css"
+          rel="stylesheet"
+        />
+      </Head>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
+        {children}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
                 window.embeddedChatbotConfig = {
                   chatbotId: "QxTmJoHRrXcoXJ_BslByu",
                   domain: "www.chatbase.co"
                 };
               `,
-            }}
-          />
-          <script
-            src="https://www.chatbase.co/embed.min.js"
-            defer
-          />
-        </body>
-      </html>
+          }}
+        />
+        <script
+          src="https://www.chatbase.co/embed.min.js"
+          defer
+        />
+      </body>
+    </html>
   );
 }

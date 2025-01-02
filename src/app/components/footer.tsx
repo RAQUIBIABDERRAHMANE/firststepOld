@@ -3,11 +3,11 @@ export default function Footer() {
     return (
 
 
-        <footer className="bg-white rounded-lg shadow m-4 light:bg-gray-800">
-            <div className="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
-                <span className="text-sm text-gray-500 sm:text-center light:text-gray-400">© 2024 <a href="https://firststep.uno/" className="hover:underline">FIRSTSTEP™</a>. All Rights Reserved.
+        <footer className="bg-white rounded-lg shadow m-4 light:bg-gray-800 flex ">
+            <div className="w-full flex flex-col mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
+                <span className="text-sm text-gray-500 sm:text-center light:text-gray-400 mb-3">© 2024 <a href="https://firststep.uno/" className="hover:underline">FIRSTSTEP™</a>. All Rights Reserved.
                 </span>
-                <ul className="flex flex-wrap items-center mt-3 mr-8 text-sm font-medium text-gray-500 light:text-gray-400 sm:mt-0">
+                <ul className="mb-4  flex flex-wrap items-center mr-8 text-sm font-medium text-gray-500 light:text-gray-400 sm:mt-0">
                     {/* <li>
                         <Link href="#" className="hover:underline me-4 md:me-6">Facebook</Link>
                     </li> */}
@@ -32,6 +32,13 @@ export default function Footer() {
                         <a href="#" className="hover:underline">Contact</a>
                     </li>
                 </ul>
+            </div>
+            <div className='w-full flex flex-col mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between'>
+                <h4 className='text-gray-500'>Contact</h4>
+                <div>
+                <p><Link href="tel:+212665830816" target='_blank' className='hover:underline'>+212665830816</Link></p>
+                <p><Link href="mailto:support@firststep.uno" target='_blank' className='hover:underline'>support@firststep.uno</Link></p>
+                </div>
             </div>
         </footer>
 
