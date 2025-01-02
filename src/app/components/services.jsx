@@ -24,7 +24,7 @@ const Service = () => {
         <div className="-mx-4 flex flex-wrap">
           <ServiceCard
             title="Hospital & cabinet system"
-            details=""
+            details="Our Hospital and Cabinet Platform is designed to transform healthcare operations by providing a robust and intuitive solution tailored for hospitals and private medical practices. The system integrates seamlessly to manage patient care, streamline operations, and improve communication between patients, doctors, and administrative staff."
             icon={
               <svg
                 xmlns="http://www.w3.org/2000/svg"
