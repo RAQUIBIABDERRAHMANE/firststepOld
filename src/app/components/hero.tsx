@@ -8,7 +8,7 @@ export default function Hero() {
       <div className="relative isolate px-6 lg:px-8 mt-[-90px]" >
         <div
           aria-hidden="true"
-          className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
+          className="absolute inset-x-0 -top-40 -z-50 transform-gpu overflow-hidden blur-3xl sm:-top-80"
         >
           <div
             style={{

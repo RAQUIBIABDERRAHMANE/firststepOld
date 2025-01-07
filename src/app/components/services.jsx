@@ -1,4 +1,5 @@
 import React from "react";
+import Link from 'next/link';
 
 const Service = () => {
   return (
@@ -7,7 +8,7 @@ const Service = () => {
         <div className="-mx-4 flex flex-wrap">
           <div className="w-full px-4">
             <div className="mx-auto mb-12 max-w-[510px] text-center lg:mb-20">
-              <span className="mb-2 block text-lg font-semibold text-primary">
+              <span className="mb-2 block text-lg font-semibold text-primary text-[#6366f1]">
                 Our Services
               </span>
               <h2 className="mb-3 text-3xl font-bold leading-[1.2] text-dark sm:text-4xl md:text-[40px]">
@@ -22,7 +23,9 @@ const Service = () => {
         </div>
 
         <div className="-mx-4 flex flex-wrap">
+          {/* Hospital and cabinet system Card */}
           <ServiceCard
+            link={'/services/hospial'}
             title="Hospital & cabinet system"
             details="Our Hospital and Cabinet Platform is designed to transform healthcare operations by providing a robust and intuitive solution tailored for hospitals and private medical practices. The system integrates seamlessly to manage patient care, streamline operations, and improve communication between patients, doctors, and administrative staff."
             icon={
@@ -30,7 +33,7 @@ const Service = () => {
                 xmlns="http://www.w3.org/2000/svg"
                 width="160"
                 height="160"
-                fill="currentColor"
+                fill="#6366F1"
                 className="bi bi-hospital-fill"
                 viewBox="0 0 16 16"
               >
@@ -38,31 +41,35 @@ const Service = () => {
               </svg>
             }
           />
+          {/* Hotel system Card */}
           <ServiceCard
-            title="Based on Tailwind CSS"
-            details="We dejoy working with discerning clients, people for whom qualuty, service, integrity & aesthetics."
+            link={'/services/hotel'}
+            title="Hotel system"
+            details="We enjoy working with discerning clients, people for whom quality, service, integrity & aesthetics."
             icon={
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
                 <path
                   d="m28.558 7.098-.47 2.74a1 1 0 0 0 1.45 1.053L32 9.6l2.461 1.293a1 1 0 0 0 1.452-1.054l-.47-2.74 1.99-1.942a1 1 0 0 0-.553-1.705l-2.752-.4L32.897.558a1.04 1.04 0 0 0-1.793 0L29.873 3.05l-2.752.4a1 1 0 0 0-.554 1.705zM42.558 12.098l-.47 2.74a1 1 0 0 0 1.45 1.053L46 14.6l2.461 1.293a1 1 0 0 0 1.452-1.054l-.47-2.74 1.99-1.942a1 1 0 0 0-.553-1.705l-2.752-.4-1.231-2.493a1.04 1.04 0 0 0-1.793 0L43.873 8.05l-2.752.4a1 1 0 0 0-.554 1.705zM54.558 19.098l-.47 2.74a1 1 0 0 0 1.45 1.053L58 21.6l2.461 1.293a1 1 0 0 0 1.452-1.054l-.47-2.74 1.99-1.941a1 1 0 0 0-.553-1.706l-2.752-.4-1.231-2.493a1.04 1.04 0 0 0-1.793 0l-1.231 2.493-2.752.4a1 1 0 0 0-.554 1.706zM14.558 12.098l-.47 2.74a1 1 0 0 0 1.45 1.053L18 14.6l2.461 1.293a1 1 0 0 0 1.452-1.054l-.47-2.74 1.99-1.942a1 1 0 0 0-.553-1.705l-2.752-.4-1.232-2.493a1.04 1.04 0 0 0-1.793 0l-1.23 2.493-2.752.4a1 1 0 0 0-.554 1.705zM2.558 19.098l-.47 2.74a1 1 0 0 0 1.45 1.053L6 21.6l2.461 1.293a1 1 0 0 0 1.452-1.054l-.47-2.74 1.99-1.941a1 1 0 0 0-.553-1.706l-2.752-.4-1.232-2.493a1.04 1.04 0 0 0-1.793 0l-1.23 2.493-2.752.4a1 1 0 0 0-.554 1.705zM63 62V29a1 1 0 0 0 0-2H46v35h-2V19a1 1 0 0 0-1-1H21a1 1 0 0 0-1 1v43h-2V27H1a1 1 0 0 0 0 2v33a1 1 0 0 0 0 2h62a1 1 0 0 0 0-2zm-8-29a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1zm0 7a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1zm0 7a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1zm0 7a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1zm-7-21a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1zm0 7a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1zm0 7a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1zm0 7a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1zM10 33a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1zm0 7a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1zm0 7a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1zm0 7a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1zM3 33a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1zm0 7a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1zm0 7a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1zm0 7a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1zm33-33a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1zm0 7a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1zm0 7a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1zm0 7a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1zm-7-21a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1zm0 7a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1zm0 7a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1zm0 7a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1zm-7-21a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1zm0 7a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1zm0 7a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1zm0 7a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1zm14 20v-7h-3v7h-2v-7h-3v7h-2V50a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v12z"
-                  fill="#1b1b1e"
+                  fill="#6366F1"
                 />
                 <path
-                  fill="#1b1b1e"
+                  fill="#6366F1"
                   d="M24 36h2v2h-2zM31 29h2v2h-2zM28 51h8v2h-8zM31 36h2v2h-2zM24 22h2v2h-2zM31 43h2v2h-2zM31 22h2v2h-2zM38 29h2v2h-2zM24 43h2v2h-2zM24 29h2v2h-2zM38 22h2v2h-2zM38 43h2v2h-2zM38 36h2v2h-2zM57 48h2v2h-2zM50 48h2v2h-2zM57 55h2v2h-2zM50 55h2v2h-2zM57 34h2v2h-2zM50 34h2v2h-2zM57 41h2v2h-2zM50 41h2v2h-2zM5 48h2v2H5zM12 48h2v2h-2zM5 55h2v2H5zM12 55h2v2h-2zM5 34h2v2H5zM12 34h2v2h-2zM5 41h2v2H5zM12 41h2v2h-2z"
                 />
               </svg>
             }
           />
+          {/* Car rental system Card */}
           <ServiceCard
-            title="100+ Components"
-            details="We dejoy working with discerning clients, people for whom qualuty, service, integrity & aesthetics."
+            link={'/services/car'}
+            title="Car rental system"
+            details="We enjoy working with discerning clients, people for whom quality, service, integrity & aesthetics."
             icon={
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="160"
                 height="160"
-                fill="currentColor"
+                fill="#6366F1"
                 className="bi bi-car-front"
                 viewBox="0 0 16 16"
               >
@@ -71,50 +78,116 @@ const Service = () => {
               </svg>
             }
           />
+          {/* restaurent system Card */}
           <ServiceCard
-            title="Speed Optimized"
-            details="We dejoy working with discerning clients, people for whom qualuty, service, integrity & aesthetics."
-            // icon={
-              
-            // }
-          />
-          <ServiceCard
-            title="Fully Customizable"
-            details="We dejoy working with discerning clients, people for whom qualuty, service, integrity & aesthetics."
+            link={'/services/restaurant'}
+            title="restaurent system"
+            details="We enjoy working with discerning clients, people for whom quality, service, integrity & aesthetics."
             icon={
               <svg
-                width="36"
-                height="36"
-                viewBox="0 0 36 36"
-                fill="none"
+                version="1.1"
+                id="Layer_1"
                 xmlns="http://www.w3.org/2000/svg"
+                xmlnsXlink="http://www.w3.org/1999/xlink"
+                x="0px"
+                y="0px"
+                viewBox="0 0 122.88 115.21"
+                style={{ enableBackground: "new 0 0 122.88 115.21" }}
+                xmlSpace="preserve"
               >
-                <path
-                  d="M30.0937 21.8251L29.6437 21.6001L30.2062 21.2626C31.3312 20.5876 31.95 19.4063 31.95 18.0563C31.95 16.7626 31.2187 15.5813 30.0937 14.9063L28.9125 14.2313L30.2062 13.4438C31.3312 12.7688 31.95 11.5876 31.95 10.2376C31.95 8.94385 31.2187 7.7626 30.0937 7.14385L19.9125 1.4626C18.7875 0.843848 17.3812 0.843848 16.3125 1.4626L5.84999 7.5376C4.72499 8.2126 4.04999 9.39385 4.04999 10.6876C4.04999 11.9813 4.72499 13.2188 5.84999 13.8376L7.08749 14.5688L5.84999 15.3001C4.72499 15.9751 4.04999 17.1563 4.04999 18.4501C4.04999 19.7438 4.72499 20.9813 5.84999 21.6001L6.35624 21.8813L5.84999 22.1626C4.72499 22.8376 3.99374 24.0188 3.99374 25.3126C3.99374 26.6626 4.66874 27.8438 5.79374 28.4626L16.1437 34.4813C16.7062 34.8188 17.325 34.9876 18 34.9876C18.675 34.9876 19.35 34.8188 19.9125 34.4251L30.2625 28.1251C31.3875 27.4501 32.0062 26.2688 32.0062 24.9188C31.95 23.6251 31.275 22.4438 30.0937 21.8251ZM6.52499 10.6876C6.52499 10.5188 6.58124 10.0126 7.08749 9.73135L17.55 3.65635C17.8875 3.43135 18.3375 3.43135 18.675 3.65635L28.9125 9.3376C29.4187 9.61885 29.475 10.1251 29.475 10.2938C29.475 10.4626 29.4187 10.9688 28.9125 11.3063L18.6187 17.6626C18.2812 17.8876 17.8312 17.8876 17.4375 17.6626L7.08749 11.6438C6.58124 11.3626 6.52499 10.8563 6.52499 10.6876ZM7.08749 17.4938L9.56249 16.0313L16.1437 19.8563C16.7062 20.1938 17.325 20.3626 18 20.3626C18.675 20.3626 19.35 20.1938 19.9125 19.8001L26.4375 15.8063L28.8562 17.1563C29.3625 17.4376 29.4187 17.9438 29.4187 18.1126C29.4187 18.2813 29.3625 18.7876 28.8562 19.1251L18.6187 25.4251C18.2812 25.6501 17.8312 25.6501 17.4375 25.4251L7.08749 19.4063C6.58124 19.1251 6.52499 18.6188 6.52499 18.4501C6.52499 18.2813 6.58124 17.7751 7.08749 17.4938ZM28.9125 25.9876L18.6187 32.3438C18.2812 32.5688 17.8312 32.5688 17.4375 32.3438L7.08749 26.3251C6.58124 26.0438 6.52499 25.5376 6.52499 25.3688C6.52499 25.2001 6.58124 24.6938 7.08749 24.4126L8.83124 23.4001L16.2 27.6751C16.7625 28.0126 17.3812 28.1813 18.0562 28.1813C18.7312 28.1813 19.4062 28.0126 19.9687 27.6188L27.225 23.1751L28.9125 24.0751C29.4187 24.3563 29.475 24.8626 29.475 25.0313C29.475 25.2001 29.4187 25.7063 28.9125 25.9876Z"
-                  fill="white"
-                />
+                <g>
+                  <path
+                    d="M29.03,100.46l20.79-25.21l9.51,12.13L41,110.69C33.98,119.61,20.99,110.21,29.03,100.46L29.03,100.46z M53.31,43.05 c1.98-6.46,1.07-11.98-6.37-20.18L28.76,1c-2.58-3.03-8.66,1.42-6.12,5.09L37.18,24c2.75,3.34-2.36,7.76-5.2,4.32L16.94,9.8 c-2.8-3.21-8.59,1.03-5.66,4.7c4.24,5.1,10.8,13.43,15.04,18.53c2.94,2.99-1.53,7.42-4.43,3.69L6.96,18.32 c-2.19-2.38-5.77-0.9-6.72,1.88c-1.02,2.97,1.49,5.14,3.2,7.34L20.1,49.06c5.17,5.99,10.95,9.54,17.67,7.53 c1.03-0.31,2.29-0.94,3.64-1.77l44.76,57.78c2.41,3.11,7.06,3.44,10.08,0.93l0.69-0.57c3.4-2.83,3.95-8,1.04-11.34L50.58,47.16 C51.96,45.62,52.97,44.16,53.31,43.05L53.31,43.05z M65.98,55.65l7.37-8.94C63.87,23.21,99-8.11,116.03,6.29 C136.72,23.8,105.97,66,84.36,55.57l-8.73,11.09L65.98,55.65L65.98,55.65z"
+                    fill="#6366f1"
+                  />
+                </g>
               </svg>
             }
           />
+          {/* stock management system Card */}
           <ServiceCard
-            title="Regular Updates"
-            details="We dejoy working with discerning clients, people for whom qualuty, service, integrity & aesthetics."
+            link={'/services/stock'}
+            title="stock management system"
+            details="We enjoy working with discerning clients, people for whom quality, service, integrity & aesthetics."
             icon={
               <svg
-                width="36"
-                height="36"
-                viewBox="0 0 36 36"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
+                fill="#6366f1"
+                height="200px"
+                width="200px"
+                version="1.1"
+                id="Layer_1"
+                viewBox="0 0 512 512"
+                stroke="#6366f1"
               >
-                <path
-                  d="M4.725 16.3124C4.89375 16.3124 5.11875 16.2562 5.2875 16.1999L11.5312 14.0062C12.2062 13.7812 12.5437 13.0499 12.3187 12.3749C12.0937 11.6999 11.3625 11.3624 10.6875 11.5874L6.80625 12.9374C8.6625 8.0999 13.3875 4.8374 18.7875 4.8374C24.6938 4.8374 29.8125 8.7749 31.275 14.3999C31.4437 15.0749 32.1187 15.4687 32.7937 15.2999C33.4687 15.1312 33.8625 14.4562 33.6938 13.7812C31.95 7.03115 25.8187 2.30615 18.7312 2.30615C12.4312 2.30615 6.8625 6.01865 4.55625 11.5874L3.375 8.2124C3.15 7.5374 2.41875 7.1999 1.74375 7.4249C1.06875 7.6499 0.73125 8.38115 0.95625 9.05615L3.09375 15.1874C3.43125 15.9187 4.05 16.3124 4.725 16.3124Z"
-                  fill="white"
-                />
-                <path
-                  d="M34.9312 27.9562L32.625 21.9375C32.4562 21.5437 32.175 21.2062 31.7812 21.0375C31.3875 20.8687 30.9375 20.8687 30.5437 21.0375L24.3562 23.3999C23.6812 23.6249 23.4 24.3562 23.625 25.0312C23.85 25.7062 24.5813 25.9875 25.2563 25.7625L29.1375 24.3C26.8875 28.4062 22.5 31.1062 17.6062 31.1062C12.0375 31.1062 7.14375 27.6187 5.4 22.4437C5.175 21.7687 4.44375 21.4312 3.825 21.6562C3.15 21.8812 2.8125 22.6124 3.0375 23.2312C5.11875 29.4187 10.9687 33.5812 17.6062 33.5812C23.4 33.5812 28.6312 30.375 31.275 25.425L32.5688 28.8562C32.7375 29.3625 33.2437 29.6437 33.75 29.6437C33.9187 29.6437 34.0312 29.6437 34.2 29.5312C34.875 29.3625 35.1562 28.6312 34.9312 27.9562Z"
-                  fill="white"
-                />
+                <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+                <g
+                  id="SVGRepo_tracerCarrier"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                ></g>
+                <g id="SVGRepo_iconCarrier">
+                  {" "}
+                  <g>
+                    {" "}
+                    <g>
+                      {" "}
+                      <path d="M486.4,0c-14.114,0-25.6,11.486-25.6,25.6v93.867h-25.6V53.504c0-10.684-8.695-19.371-19.371-19.371h-63.659 c-10.675,0-19.371,8.687-19.371,19.371v65.963h-25.6V53.504c0-10.684-8.695-19.371-19.371-19.371h-63.659 c-10.675,0-19.371,8.687-19.371,19.371v65.963h-25.6V53.504c0-10.684-8.695-19.371-19.371-19.371H96.171 c-10.675,0-19.371,8.687-19.371,19.371v65.963H51.2V25.6C51.2,11.486,39.714,0,25.6,0S0,11.486,0,25.6V512h51.2v-51.2h25.6h102.4 h25.6h102.4h25.6h102.4h25.6V512H512V25.6C512,11.486,500.514,0,486.4,0z M460.8,443.733h-25.6v-65.963 c0-10.684-8.695-19.371-19.371-19.371h-63.659c-10.675,0-19.371,8.687-19.371,19.371v65.963h-25.6v-65.963 c0-10.684-8.695-19.371-19.371-19.371h-63.659c-10.675,0-19.371,8.687-19.371,19.371v65.963h-25.6v-65.963 c0-10.684-8.695-19.371-19.371-19.371H96.171c-10.675,0-19.371,8.687-19.371,19.371v65.963H51.2V298.667h25.6h102.4h25.6h102.4 h25.6h102.4h25.6V443.733z M460.8,281.6h-25.6v-65.963c0-10.684-8.695-19.371-19.371-19.371h-63.659 c-10.675,0-19.371,8.687-19.371,19.371V281.6h-25.6v-65.963c0-10.684-8.695-19.371-19.371-19.371h-63.659 c-10.675,0-19.371,8.687-19.371,19.371V281.6h-25.6v-65.963c0-10.684-8.695-19.371-19.371-19.371H96.171 c-10.675,0-19.371,8.687-19.371,19.371V281.6H51.2V136.533h25.6h102.4h25.6h102.4h25.6h102.4h25.6V281.6z"></path>{" "}
+                    </g>{" "}
+                  </g>{" "}
+                </g>
+              </svg>
+            }
+          />
+          {/* Custom Web app Card */}
+          <ServiceCard
+            link={'/services/CustomWebApp'}
+            title="Custom Web app"
+            details="We enjoy working with discerning clients, people for whom quality, service, integrity & aesthetics."
+            icon={
+              <svg
+                version="1.1"
+                id="Layer_1"
+                viewBox="0 0 512 512"
+                fill="#ffffff"
+                stroke="#ffffff"
+              >
+                <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+                <g
+                  id="SVGRepo_tracerCarrier"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                ></g>
+                <g id="SVGRepo_iconCarrier">
+                  <polygon
+                    style={{ fill: "#6366f1" }}
+                    points="395.13,233.739 395.13,0 116.87,0 116.87,233.739 5.565,233.739 5.565,512 506.435,512 506.435,233.739"
+                  ></polygon>
+                  <rect
+                    x="116.87"
+                    style={{ fill: "#6366f1" }}
+                    width="278.261"
+                    height="267.13"
+                  ></rect>
+                  <rect
+                    x="72.348"
+                    y="300.522"
+                    width="133.565"
+                    height="33.391"
+                  ></rect>
+                  <path d="M395.13,233.739V0H116.87v233.739H5.565V512h500.87V233.739H395.13z M150.261,33.391h211.478v200.348H150.261V33.391z M38.957,478.609V267.13h200.348v211.478H38.957z M473.043,478.609H272.696V267.13h200.348V478.609z"></path>
+                  <rect
+                    x="306.087"
+                    y="300.522"
+                    width="133.565"
+                    height="33.391"
+                  ></rect>
+                  <rect
+                    x="183.652"
+                    y="66.783"
+                    width="144.696"
+                    height="33.391"
+                  ></rect>
+                </g>
               </svg>
             }
           />
@@ -126,11 +199,12 @@ const Service = () => {
 
 export default Service;
 
-const ServiceCard = ({ icon, title, details }) => {
+const ServiceCard = ({link, icon, title, details }) => {
   return (
     <>
       <div className="w-full px-4 md:w-1/2 lg:w-1/3">
-        <div className="mb-9 rounded-[20px] bg-white p-10 shadow-2  hover:shadow-lg md:px-7 xl:px-10">
+        <div className="mb-9 rounded-[20px] bg-white p-10 shadow-2  hover:shadow-lg border-2 border-[#6366f1]/30 md:px-7 xl:px-10">
+          <Link href={link}>
           <div className="mb-8 flex h-[70px] w-[70px] items-center justify-center rounded-2xl bg-primary">
             {icon}
           </div>
@@ -138,6 +212,7 @@ const ServiceCard = ({ icon, title, details }) => {
             {title}
           </h4>
           <p className="text-body-color ">{details}</p>
+          </Link>
         </div>
       </div>
     </>
