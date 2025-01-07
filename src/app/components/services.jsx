@@ -1,5 +1,5 @@
 import React from "react";
-import Link from 'next/link';
+import Link from "next/link";
 
 const Service = () => {
   return (
@@ -25,9 +25,9 @@ const Service = () => {
         <div className="-mx-4 flex flex-wrap">
           {/* Hospital and cabinet system Card */}
           <ServiceCard
-            link={'/services/hospial'}
+            link={"/services/hospial"}
             title="Hospital & cabinet system"
-            details="Our Hospital and Cabinet Platform is designed to transform healthcare operations by providing a robust and intuitive solution tailored for hospitals and private medical practices. The system integrates seamlessly to manage patient care, streamline operations, and improve communication between patients, doctors, and administrative staff."
+            details="A tailored solution for healthcare providers to manage patient records, appointments, billing, and diagnostics. It includes features for telemedicine, inventory management, doctor scheduling, and compliance with medical data standards like HIPAA and GDPR."
             icon={
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -43,9 +43,9 @@ const Service = () => {
           />
           {/* Hotel system Card */}
           <ServiceCard
-            link={'/services/hotel'}
+            link={"/services/hotel"}
             title="Hotel system"
-            details="We enjoy working with discerning clients, people for whom quality, service, integrity & aesthetics."
+            details="An all-in-one solution for hotel operations, offering tools for reservation management, front desk automation, housekeeping, billing, and guest services. It supports integrations with OTA platforms, loyalty programs, and IoT for smart room controls."
             icon={
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
                 <path
@@ -61,9 +61,9 @@ const Service = () => {
           />
           {/* Car rental system Card */}
           <ServiceCard
-            link={'/services/car'}
+            link={"/services/car"}
             title="Car rental system"
-            details="We enjoy working with discerning clients, people for whom quality, service, integrity & aesthetics."
+            details="A comprehensive platform for managing car rentals and fleet operations. It includes reservation management, vehicle tracking, maintenance scheduling, customer profiles, dynamic pricing, and integration with insurance providers for seamless service."
             icon={
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -80,9 +80,9 @@ const Service = () => {
           />
           {/* restaurent system Card */}
           <ServiceCard
-            link={'/services/restaurant'}
+            link={"/services/restaurant"}
             title="restaurent system"
-            details="We enjoy working with discerning clients, people for whom quality, service, integrity & aesthetics."
+            details="A versatile system to streamline restaurant operations, including reservation handling, order management, POS integration, staff scheduling, and inventory tracking for ingredients and supplies. It enhances customer experiences with online reservations and personalized services."
             icon={
               <svg
                 version="1.1"
@@ -106,9 +106,9 @@ const Service = () => {
           />
           {/* stock management system Card */}
           <ServiceCard
-            link={'/services/stock'}
+            link={"/services/stock"}
             title="stock management system"
-            details="We enjoy working with discerning clients, people for whom quality, service, integrity & aesthetics."
+            details="A robust solution for tracking, organizing, and optimizing inventory levels across multiple warehouses or stores. Features include real-time stock updates, low-stock alerts, supplier integration, and analytics to prevent overstocking or shortages."
             icon={
               <svg
                 fill="#6366f1"
@@ -140,7 +140,7 @@ const Service = () => {
           />
           {/* Custom Web app Card */}
           <ServiceCard
-            link={'/services/CustomWebApp'}
+            link={"/services/CustomWebApp"}
             title="Custom Web app"
             details="We enjoy working with discerning clients, people for whom quality, service, integrity & aesthetics."
             icon={
@@ -199,19 +199,19 @@ const Service = () => {
 
 export default Service;
 
-const ServiceCard = ({link, icon, title, details }) => {
+const ServiceCard = ({ link, icon, title, details }) => {
   return (
     <>
       <div className="w-full px-4 md:w-1/2 lg:w-1/3">
-        <div className="mb-9 rounded-[20px] bg-white p-10 shadow-2  hover:shadow-lg border-2 border-[#6366f1]/30 md:px-7 xl:px-10">
+        <div className="mb-9 rounded-[20px] bg-white p-10 shadow-2 h-96  hover:shadow-lg border-2 border-[#6366f1]/30 md:px-7 xl:px-10">
           <Link href={link}>
-          <div className="mb-8 flex h-[70px] w-[70px] items-center justify-center rounded-2xl bg-primary">
-            {icon}
-          </div>
-          <h4 className="mb-[14px] text-2xl font-semibold text-dark ">
-            {title}
-          </h4>
-          <p className="text-body-color ">{details}</p>
+            <div className="mb-8 flex h-[70px] w-[70px] items-center justify-center rounded-2xl bg-primary">
+              {icon}
+            </div>
+            <h4 className="mb-[14px] text-2xl font-semibold text-dark ">
+              {title}
+            </h4>
+            <p className="text-body-color ">{details}</p>
           </Link>
         </div>
       </div>
