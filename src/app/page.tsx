@@ -3,7 +3,7 @@ import Features from "./components/features";
 import Pricing from "./components/pricing";
 import Stats from "./components/stats";
 import Footer from "./components/footer";
-import Navbar from "./components/navbar";
+import Navbar from './components/navbar';
 
 export default function Home() {
   return (
