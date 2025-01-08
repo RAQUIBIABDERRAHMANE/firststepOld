@@ -5,7 +5,7 @@ export default function Hero() {
   return (
     <div className="bg-white">
 
-      <div className="relative isolate px-6 lg:px-8 mt-[-90px]" >
+      <div className="relative isolate px-6 lg:px-8 -mt-36" >
         <div
           aria-hidden="true"
           className="absolute inset-x-0 -top-40 -z-50 transform-gpu overflow-hidden blur-3xl sm:-top-80"

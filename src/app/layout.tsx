@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Head from "next/head";
 import "./globals.css";
-
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -10,11 +9,11 @@ const geistSans = Geist({
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
-  subsets: ["latin"],
+  subsets:["latin"],
 });
 
 export const metadata: Metadata = {
-  title: "First Step",
+  title: "Firs Step",
   description: "is a web development company that specializes in data management for stock management, car rental, restaurants, and hotels.",
   authors: [{ name: "Abderrahmane Raquibi" }],
   keywords: "nextjs, react, app, web development, data management, stock management, cars, car rental, restaurants, hotels, frontend, backend, fullstack, javascript, typescript, programming, coding, software development, database, SQL, NoSQL, inventory, logistics, vehicle, automobile, transportation, travel, dining, food service, hospitality, booking, reservation, ecommerce, business, technology, innovation, cloud computing, API, microservices, UX, UI, design, responsive design, SEO, performance, security, testing, deployment, CI/CD, DevOps, agile, scrum, project management",

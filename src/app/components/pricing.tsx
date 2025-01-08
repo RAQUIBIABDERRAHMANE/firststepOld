@@ -5,10 +5,10 @@ export default function Pricing() {
   const [isYearly, setIsYearly] = useState(true);
 
   return (
-    <section className="py-24" id="pricing">
+    <section className="py-24" >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-12 text-center">
-          <h2 className="font-manrope text-5xl text-center font-bold text-gray-900 mb-4">
+          <h2 className="font-manrope text-5xl text-center font-bold text-gray-900 mb-4"id="pricing">
             Our pricing plans
           </h2>
           <p className="text-gray-500 text-xl text-center leading-6 mb-12">
@@ -38,13 +38,13 @@ export default function Pricing() {
             <div className="flex justify-center items-center bg-gray-100 rounded-full p-1.5 max-w-sm mx-auto">
               <button
                 onClick={() => setIsYearly(true)}
-                className={`inline-block w-1/2 text-center transition-all duration-500 rounded-full text-gray-400 font-semibold py-3 px-3 lg:px-11 hover:text-indigo-600 ${isYearly ? "bg-indigo-600 text-white" : ""}`}
+                className={`inline-block w-1/2 text-center transition-all duration-500 rounded-full text-gray-400 font-semibold py-3 px-3 lg:px-11 hover:text-indigo-600 ${isYearly ? "bg-indigo-600 text-white hover:text-white" : ""}`}
               >
                 Bill Yearly
               </button>
               <button
                 onClick={() => setIsYearly(false)}
-                className={`inline-block w-1/2 text-center transition-all duration-500 rounded-full text-gray-400 font-semibold py-3 px-3 lg:px-11 hover:text-indigo-600 ${!isYearly ? "bg-indigo-600 text-white" : ""}`}
+                className={`inline-block w-1/2 text-center transition-all duration-500 rounded-full text-gray-400 font-semibold py-3 px-3 lg:px-11 hover:text-indigo-600 ${!isYearly ? "bg-indigo-600 text-white hover:text-white" : ""}`}
               >
                 Bill Monthly
               </button>
@@ -58,7 +58,7 @@ export default function Pricing() {
                   <h3 className="font-manrope text-2xl font-bold mb-6">Free</h3>
                   <div className="mb-20 flex flex-col">
                     <span className="font-manrope text-6xl font-semibold mb-2">0$</span>
-                    <span className="text-xl text-gray-400">Life time</span>
+                    <span className="text-xl text-gray-400">20 day free trail </span>
                   </div>
                   <a
                     href="javascript:;"
@@ -111,7 +111,7 @@ export default function Pricing() {
                   <h3 className="font-manrope text-2xl font-bold mb-6">Free</h3>
                   <div className="mb-20 flex flex-col">
                     <span className="font-manrope text-6xl font-semibold mb-2">0$</span>
-                    <span className="text-xl text-gray-400">Life time</span>
+                    <span className="text-xl text-gray-400">20 day free trail</span>
                   </div>
                   <a
                     href="javascript:;"
