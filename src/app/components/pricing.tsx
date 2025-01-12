@@ -14,6 +14,7 @@ export default function Pricing() {
           <p className="text-gray-500 text-xl text-center leading-6 mb-12">
             15 Days free trial. No credit card required.
           </p>
+
           {/* <div className="mb-10 flex justify-center">
             <span className="flex items-center">
               <svg

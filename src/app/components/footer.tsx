@@ -1,8 +1,6 @@
 import Link from 'next/link';
 export default function Footer() {
     return (
-
-
         <footer className="bg-white rounded-lg shadow m-4 light:bg-gray-800 flex ">
             <div className="w-full flex flex-col mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
                 <span className="text-sm text-gray-500 sm:text-center light:text-gray-400 mb-3">© 2024 <a href="https://firststep.uno/" className="hover:underline">FIRSTSTEP™</a>. All Rights Reserved.
@@ -35,10 +33,8 @@ export default function Footer() {
             </div>
             <div className='w-full flex flex-col mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between'>
                 <h4 className='text-gray-500'>Contact</h4>
-                <div>
                 <p><Link href="tel:+212665830816" target='_blank' className='hover:underline'>+212665830816</Link></p>
                 <p><Link href="mailto:support@firststep.uno" target='_blank' className='hover:underline'>support@firststep.uno</Link></p>
-                </div>
             </div>
         </footer>
 

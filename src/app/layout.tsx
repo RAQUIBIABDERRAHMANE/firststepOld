@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Head from "next/head";
 import "./globals.css";
+import Footer from "./components/footer";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -75,6 +76,7 @@ export default function RootLayout({
           src="https://www.chatbase.co/embed.min.js"
           defer
         />
+        <Footer/>
       </body>
     </html>
   );
