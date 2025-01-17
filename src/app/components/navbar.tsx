@@ -1,5 +1,6 @@
 'use client'
 // imports start
+import { SignedOut } from '@clerk/nextjs'
 import { useState } from 'react'
 import {
   Dialog,
@@ -18,7 +19,7 @@ import {
   ChartPieIcon,
   CursorArrowRaysIcon,
   FingerPrintIcon,
-  SquaresPlusIcon,
+  // SquaresPlusIcon,
   // XMarkIcon,
 } from '@heroicons/react/24/outline'
 import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
@@ -27,11 +28,11 @@ import Link from 'next/link';
 // imports end
 
 const features = [
-  { name: 'Analytics', description: 'Get a better understanding of your traffic', href: '#', icon: ChartPieIcon },
-  { name: 'Engagement', description: 'Speak directly to your customers', href: '#', icon: CursorArrowRaysIcon },
-  { name: 'Security', description: 'Your customers’ data will be safe and secure using end-to-end encryption', href: '#', icon: FingerPrintIcon },
-  { name: 'Integrations', description: 'Connect with third-party tools', href: '#', icon: SquaresPlusIcon },
-  { name: 'Automations', description: 'Build strategic funnels that will convert', href: '#', icon: ArrowPathIcon },
+  { name: 'Scalability and Customization', description: 'Grows and adapts to unique needs.', href: '#', icon: ChartPieIcon },
+  { name: 'Centralized Dashboard', description: 'Unified management for multiple services.', href: '#', icon: CursorArrowRaysIcon },
+  { name: 'Security and Compliance', description: 'Protects data, ensures regulatory adherence.', href: '#', icon: FingerPrintIcon },
+  // { name: 'Integrations', description: 'Connect with third-party tools', href: '#', icon: SquaresPlusIcon },
+  { name: 'Automation and Insights', description: 'Saves time, optimizes operations intelligently.', href: '#', icon: ArrowPathIcon },
 ]
 const callsToAction = [
   { name: 'Watch demo', href: '#', icon: PlayCircleIcon },
@@ -128,7 +129,10 @@ export default function Navbar() {
           </a>
         </PopoverGroup>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <span>Login</span>
+          <SignedOut>
+        <Link href={"/sign-up"}>Sign up</Link>
+          </SignedOut>
+
         </div>
       </nav>
       <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">
@@ -157,7 +161,7 @@ export default function Navbar() {
           <div className="mt-6 flow-root">
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
-                
+
                 <Link
                   href="/"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
@@ -208,12 +212,7 @@ export default function Navbar() {
                 </a>
               </div>
               <div className="py-6">
-                <a
-                  href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
-                >
-                  Log in
-                </a>
+                <Link href={"./signup"}>Sign up</Link>
               </div>
             </div>
           </div>
