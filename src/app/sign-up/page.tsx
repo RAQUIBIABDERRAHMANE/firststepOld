@@ -3,7 +3,7 @@ import { SignUp } from '@clerk/nextjs';
 export default function Home() {
     return (
         <div className="flex justify-center items-center">
-            <SignUp />
+            <SignUp forceRedirectUrl={'/'} />
         </div>
     );
 }
