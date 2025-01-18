@@ -212,7 +212,9 @@ export default function Navbar() {
                 </a>
               </div>
               <div className="py-6">
-                <Link href={"./signup"}>Sign up</Link>
+                <SignedOut>
+                  <Link href={"https://glad-mako-78.accounts.dev/sign-up"}>Sign up</Link>
+                </SignedOut>
               </div>
             </div>
           </div>
