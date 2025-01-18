@@ -130,7 +130,7 @@ export default function Navbar() {
         </PopoverGroup>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <SignedOut>
-        <Link href={"/sign-up"}>Sign up</Link>
+            <Link href={"https://glad-mako-78.accounts.dev/sign-up"}>Sign up</Link>
           </SignedOut>
 
         </div>
