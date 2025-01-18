@@ -17,3 +17,11 @@
 html {
   scroll-behavior: smooth;
 }
+
+/* .cl-internal-4x6jej{
+  display: none !important;
+} */
+
+footer {
+  display: none !important;
+}

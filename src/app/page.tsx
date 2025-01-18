@@ -1,6 +1,7 @@
 import Hero from "./components/hero";
 import Features from "./components/features";
 import Pricing from "./components/pricing";
+import Footer from "./components/footer";
 import Navbar from './components/navbar';
 
 export default function Home() {
@@ -12,6 +13,7 @@ export default function Home() {
       <Hero />
       <Features />
       <Pricing />
+      <Footer />
     </main>
   );
 }
