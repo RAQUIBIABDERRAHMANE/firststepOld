@@ -1,7 +1,7 @@
 const stats = [
     { id: 1, name: 'Average daily user sign-ups.', value: '107' },
     { id: 2, name: 'Projected user count by October 8, 2025', value: '350,000' },
-    { id: 2, name: 'Total profite', value: "155.030$"},
+    { id: 2, name: 'Total profite', value: "18.030$"},
     { id: 3, name: 'Total Users', value: '15,503' },
   ]
   export default function Stats() {
