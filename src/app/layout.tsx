@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Firs Step",
+  title: "First Step",
   description: "is a web development company that specializes in data management for stock management, car rental, restaurants, and hotels.",
   authors: [{ name: "Abderrahmane Raquibi" }],
   keywords: "nextjs, react, app, web development, data management, stock management, cars, car rental, restaurants, hotels, frontend, backend, fullstack, javascript, typescript, programming, coding, software development, database, SQL, NoSQL, inventory, logistics, vehicle, automobile, transportation, travel, dining, food service, hospitality, booking, reservation, ecommerce, business, technology, innovation, cloud computing, API, microservices, UX, UI, design, responsive design, SEO, performance, security, testing, deployment, CI/CD, DevOps, agile, scrum, project management",
