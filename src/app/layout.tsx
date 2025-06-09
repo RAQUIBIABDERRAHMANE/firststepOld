@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { ClerkProvider } from '@clerk/nextjs';
 import Head from "next/head";
 import "./globals.css";
 
@@ -46,9 +47,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+    <ClerkProvider>
       <html lang="en">
         <Head>
-          <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+          <link rel="shortcut icon\" href="/favicon.ico\" type="image/x-icon" />
           <script
             src="https://cdn.jsdelivr.net/npm/tailgrids@2.2.2/plugin.min.js"
             async
@@ -78,5 +80,6 @@ export default function RootLayout({
           />
         </body>
       </html>
+    </ClerkProvider>
   );
 }
