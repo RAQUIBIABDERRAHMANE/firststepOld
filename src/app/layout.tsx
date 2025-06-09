@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Head from "next/head";
 import "./globals.css";
-import { ClerkProvider } from '@clerk/nextjs';
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -46,7 +45,6 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
     <html lang="en">
       <Head>
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
@@ -79,6 +77,5 @@ export default function RootLayout({
         />
       </body>
     </html>
-    </ClerkProvider>
   );
 }
