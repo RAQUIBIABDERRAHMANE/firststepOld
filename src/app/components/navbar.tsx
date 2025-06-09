@@ -1,6 +1,5 @@
 'use client'
 // imports start
-import { SignedOut } from '@clerk/nextjs'
 import { useState } from 'react'
 import {
   Dialog,
@@ -128,12 +127,6 @@ export default function Navbar() {
             Conatct
           </a>
         </PopoverGroup>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <SignedOut>
-            <Link href={"https://glad-mako-78.accounts.dev/sign-up"}>Sign up</Link>
-          </SignedOut>
-
-        </div>
       </nav>
       <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">
         <div className="fixed inset-0 z-10" />
@@ -211,11 +204,7 @@ export default function Navbar() {
                   Contact
                 </a>
               </div>
-              <div className="py-6">
-                <SignedOut>
-                  <Link href={"https://glad-mako-78.accounts.dev/sign-up"}>Sign up</Link>
-                </SignedOut>
-              </div>
+
             </div>
           </div>
         </DialogPanel>
