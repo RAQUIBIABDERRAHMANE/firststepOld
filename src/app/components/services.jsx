@@ -43,7 +43,7 @@ const Service = () => {
             title="Hotel Management"
             details="All-in-one hotel operations platform with reservation management, front desk automation, housekeeping, billing, and guest services integration."
             icon={
-              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" className="text-indigo-600" viewBox="0 0 64 64">
+              <svg xmlns="http://www.w3.org/2000/svg\" width="48\" height="48\" fill="currentColor\" className="text-indigo-600\" viewBox="0 0 64 64">
                 <path d="m28.558 7.098-.47 2.74a1 1 0 0 0 1.45 1.053L32 9.6l2.461 1.293a1 1 0 0 0 1.452-1.054l-.47-2.74 1.99-1.942a1 1 0 0 0-.553-1.705l-2.752-.4L32.897.558a1.04 1.04 0 0 0-1.793 0L29.873 3.05l-2.752.4a1 1 0 0 0-.554 1.705z" />
               </svg>
             }
