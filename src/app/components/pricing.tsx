@@ -1,6 +1,6 @@
 "use client"
 import { useState } from "react";
-import { CheckIcon } from "@heroicons/react/24/outline";
+import { CheckIcon, StarIcon } from "@heroicons/react/24/outline";
 
 interface Plan {
   name: string;
@@ -10,6 +10,7 @@ interface Plan {
   features: string[];
   popular: boolean;
   cta: string;
+  gradient: string;
 }
 
 interface Plans {
@@ -22,52 +23,58 @@ const plans: Plans = {
     {
       name: "Starter",
       price: 29,
-      description: "Perfect for small businesses getting started",
+      description: "Perfect for emerging businesses",
       features: [
         "Up to 5 users",
-        "Basic reporting",
+        "Basic AI analytics",
         "Email support",
         "Mobile app access",
         "1 industry module",
-        "5GB storage"
+        "5GB cloud storage",
+        "Standard security"
       ],
       popular: false,
-      cta: "Start Free Trial"
+      cta: "Initialize Trial",
+      gradient: "from-cyan-400 to-blue-600"
     },
     {
       name: "Professional",
       price: 79,
-      description: "Ideal for growing businesses",
+      description: "Ideal for scaling operations",
       features: [
         "Up to 25 users",
-        "Advanced analytics",
+        "Advanced AI insights",
         "Priority support",
         "API access",
         "3 industry modules",
-        "50GB storage",
+        "50GB cloud storage",
         "Custom integrations",
-        "Advanced security"
+        "Enhanced security",
+        "Real-time analytics"
       ],
       popular: true,
-      cta: "Start Free Trial"
+      cta: "Deploy System",
+      gradient: "from-purple-400 to-pink-600"
     },
     {
       name: "Enterprise",
       price: 199,
-      description: "For large organizations",
+      description: "For mission-critical operations",
       features: [
         "Unlimited users",
-        "Custom reporting",
-        "24/7 phone support",
-        "Dedicated account manager",
+        "Custom AI models",
+        "24/7 dedicated support",
+        "Account manager",
         "All industry modules",
         "Unlimited storage",
         "White-label options",
         "SLA guarantee",
-        "Custom development"
+        "Custom development",
+        "Advanced compliance"
       ],
       popular: false,
-      cta: "Contact Sales"
+      cta: "Contact Specialists",
+      gradient: "from-orange-400 to-red-600"
     }
   ],
   yearly: [
@@ -75,54 +82,60 @@ const plans: Plans = {
       name: "Starter",
       price: 290,
       originalPrice: 348,
-      description: "Perfect for small businesses getting started",
+      description: "Perfect for emerging businesses",
       features: [
         "Up to 5 users",
-        "Basic reporting",
+        "Basic AI analytics",
         "Email support",
         "Mobile app access",
         "1 industry module",
-        "5GB storage"
+        "5GB cloud storage",
+        "Standard security"
       ],
       popular: false,
-      cta: "Start Free Trial"
+      cta: "Initialize Trial",
+      gradient: "from-cyan-400 to-blue-600"
     },
     {
       name: "Professional",
       price: 790,
       originalPrice: 948,
-      description: "Ideal for growing businesses",
+      description: "Ideal for scaling operations",
       features: [
         "Up to 25 users",
-        "Advanced analytics",
+        "Advanced AI insights",
         "Priority support",
         "API access",
         "3 industry modules",
-        "50GB storage",
+        "50GB cloud storage",
         "Custom integrations",
-        "Advanced security"
+        "Enhanced security",
+        "Real-time analytics"
       ],
       popular: true,
-      cta: "Start Free Trial"
+      cta: "Deploy System",
+      gradient: "from-purple-400 to-pink-600"
     },
     {
       name: "Enterprise",
       price: 1990,
       originalPrice: 2388,
-      description: "For large organizations",
+      description: "For mission-critical operations",
       features: [
         "Unlimited users",
-        "Custom reporting",
-        "24/7 phone support",
-        "Dedicated account manager",
+        "Custom AI models",
+        "24/7 dedicated support",
+        "Account manager",
         "All industry modules",
         "Unlimited storage",
         "White-label options",
         "SLA guarantee",
-        "Custom development"
+        "Custom development",
+        "Advanced compliance"
       ],
       popular: false,
-      cta: "Contact Sales"
+      cta: "Contact Specialists",
+      gradient: "from-orange-400 to-red-600"
     }
   ]
 };
@@ -132,146 +145,185 @@ const Pricing: React.FC = () => {
   const currentPlans = isYearly ? plans.yearly : plans.monthly;
 
   return (
-    <section className="py-24 bg-gray-50" id="pricing" aria-labelledby="pricing-title">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-base font-semibold leading-7 text-indigo-600 mb-4">Pricing</h2>
-          <h3 id="pricing-title" className="text-section-title text-gray-900 mb-6">
-            Choose the perfect plan for your business
-          </h3>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-12">
-            Start with a 15-day free trial. No credit card required. Cancel anytime.
+    <section className="py-32 bg-black relative overflow-hidden" id="pricing">
+      {/* Background Elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-0 left-1/3 w-96 h-96 bg-purple-400/10 rounded-full blur-3xl animate-pulse-slow" />
+        <div className="absolute bottom-0 right-1/3 w-96 h-96 bg-cyan-400/10 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '2s' }} />
+      </div>
+
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-20">
+          <div className="inline-flex items-center rounded-full px-6 py-2 text-sm font-medium bg-green-400/10 text-green-400 border border-green-400/30 mb-8">
+            <span className="text-mono">PRICING.MATRIX</span>
+          </div>
+          
+          <h2 className="text-section-title mb-8">
+            Choose Your Configuration
+          </h2>
+          
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto mb-12 leading-relaxed">
+            Start with a 15-day free trial. No credit card required.
+            <br />
+            <span className="text-cyan-400 font-medium">Scale as you grow.</span>
           </p>
 
           {/* Pricing Toggle */}
-          <div className="flex justify-center items-center bg-white rounded-full p-1.5 max-w-sm mx-auto shadow-lg" role="group" aria-label="Billing period">
+          <div className="flex justify-center items-center glass p-2 rounded-2xl max-w-sm mx-auto mb-16">
             <button
               onClick={() => setIsYearly(false)}
-              className={`inline-block w-1/2 text-center transition-all duration-300 rounded-full font-semibold py-3 px-6 ${
-                !isYearly ? "bg-indigo-600 text-white shadow-lg" : "text-gray-600 hover:text-indigo-600"
+              className={`flex-1 text-center transition-all duration-300 rounded-xl font-semibold py-3 px-6 text-mono ${
+                !isYearly 
+                  ? "bg-gradient-to-r from-cyan-400 to-blue-600 text-black shadow-lg" 
+                  : "text-gray-400 hover:text-cyan-400"
               }`}
-              aria-pressed={!isYearly}
             >
-              Monthly
+              MONTHLY
             </button>
             <button
               onClick={() => setIsYearly(true)}
-              className={`inline-block w-1/2 text-center transition-all duration-300 rounded-full font-semibold py-3 px-6 relative ${
-                isYearly ? "bg-indigo-600 text-white shadow-lg" : "text-gray-600 hover:text-indigo-600"
+              className={`flex-1 text-center transition-all duration-300 rounded-xl font-semibold py-3 px-6 relative text-mono ${
+                isYearly 
+                  ? "bg-gradient-to-r from-purple-400 to-pink-600 text-black shadow-lg" 
+                  : "text-gray-400 hover:text-purple-400"
               }`}
-              aria-pressed={isYearly}
             >
-              Yearly
+              YEARLY
               <span className="absolute -top-2 -right-2 bg-green-500 text-white text-xs px-2 py-1 rounded-full">
-                Save 20%
+                -20%
               </span>
             </button>
           </div>
         </div>
 
         {/* Pricing Cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-6">
-          {currentPlans.map((plan) => (
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {currentPlans.map((plan, index) => (
             <div
               key={plan.name}
-              className={`relative rounded-3xl p-8 ${
+              className={`relative glass-card rounded-3xl p-8 ${
                 plan.popular
-                  ? "bg-gradient-to-br from-indigo-600 to-purple-600 text-white shadow-2xl scale-105 lg:scale-110"
-                  : "bg-white text-gray-900 shadow-lg hover:shadow-xl"
-              } transition-all duration-300 hover:-translate-y-2`}
-              role="article"
-              aria-labelledby={`plan-${plan.name.toLowerCase()}-title`}
+                  ? "scale-105 lg:scale-110 border-2 border-purple-400/50"
+                  : ""
+              } card-hover`}
             >
+              {/* Popular Badge */}
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <span className="bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-6 py-2 rounded-full text-sm font-semibold shadow-lg">
-                    Most Popular
-                  </span>
+                  <div className="bg-gradient-to-r from-purple-400 to-pink-600 text-black px-6 py-2 rounded-full text-sm font-bold shadow-lg flex items-center">
+                    <StarIcon className="w-4 h-4 mr-1" />
+                    MOST_POPULAR
+                  </div>
                 </div>
               )}
 
-              <div className="text-center mb-8">
-                <h3 id={`plan-${plan.name.toLowerCase()}-title`} className={`text-2xl font-bold mb-2 ${plan.popular ? "text-white" : "text-gray-900"}`}>
-                  {plan.name}
-                </h3>
-                <p className={`text-sm mb-6 ${plan.popular ? "text-indigo-100" : "text-gray-600"}`}>
-                  {plan.description}
-                </p>
-                
-                <div className="mb-6">
-                  <div className="flex items-baseline justify-center">
-                    <span className={`text-5xl font-bold ${plan.popular ? "text-white" : "text-gray-900"}`}>
-                      ${plan.price}
-                    </span>
-                    <span className={`text-lg ml-1 ${plan.popular ? "text-indigo-100" : "text-gray-600"}`}>
-                      /{isYearly ? "year" : "month"}
-                    </span>
-                  </div>
-                  {isYearly && plan.originalPrice && (
-                    <div className="mt-2">
-                      <span className={`text-sm line-through ${plan.popular ? "text-indigo-200" : "text-gray-500"}`}>
-                        ${plan.originalPrice}/year
+              {/* Gradient Border Effect */}
+              <div className={`absolute inset-0 bg-gradient-to-r ${plan.gradient} opacity-0 hover:opacity-10 transition-opacity duration-500 rounded-3xl blur-xl`} />
+
+              <div className="relative">
+                {/* Header */}
+                <div className="text-center mb-8">
+                  <h3 className="text-2xl font-bold text-white mb-2 text-mono">
+                    {plan.name.toUpperCase()}
+                  </h3>
+                  <p className="text-sm text-gray-400 mb-6">
+                    {plan.description}
+                  </p>
+                  
+                  {/* Price */}
+                  <div className="mb-6">
+                    <div className="flex items-baseline justify-center">
+                      <span className="text-5xl font-bold text-white">
+                        ${plan.price}
                       </span>
-                      <span className="ml-2 text-sm font-semibold text-green-500">
-                        Save ${plan.originalPrice - plan.price}
+                      <span className="text-lg ml-1 text-gray-400">
+                        /{isYearly ? "year" : "month"}
                       </span>
                     </div>
-                  )}
+                    {isYearly && plan.originalPrice && (
+                      <div className="mt-2">
+                        <span className="text-sm line-through text-gray-500">
+                          ${plan.originalPrice}/year
+                        </span>
+                        <span className="ml-2 text-sm font-semibold text-green-400">
+                          Save ${plan.originalPrice - plan.price}
+                        </span>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* CTA Button */}
+                  <button
+                    className={`w-full py-4 px-6 rounded-xl font-semibold transition-all duration-300 text-mono ${
+                      plan.popular
+                        ? "bg-gradient-to-r from-purple-400 to-pink-600 text-black hover:scale-105 shadow-lg"
+                        : "bg-white/10 text-white hover:bg-white/20 border border-white/20"
+                    }`}
+                  >
+                    {plan.cta.toUpperCase()}
+                  </button>
                 </div>
 
-                <button
-                  className={`w-full py-4 px-6 rounded-xl font-semibold transition-all duration-300 ${
-                    plan.popular
-                      ? "bg-white text-indigo-600 hover:bg-gray-100 shadow-lg"
-                      : "bg-indigo-600 text-white hover:bg-indigo-700 shadow-lg hover:shadow-xl"
-                  } hover:scale-105 active:scale-95`}
-                  aria-label={`${plan.cta} for ${plan.name} plan`}
-                >
-                  {plan.cta}
-                </button>
+                {/* Features */}
+                <div className="space-y-4">
+                  <h4 className="font-semibold text-white mb-4 text-mono">
+                    SYSTEM.FEATURES:
+                  </h4>
+                  <ul className="space-y-3">
+                    {plan.features.map((feature, featureIndex) => (
+                      <li key={featureIndex} className="flex items-center">
+                        <div className="flex-shrink-0 w-5 h-5 rounded-full bg-gradient-to-r from-green-400 to-emerald-600 flex items-center justify-center mr-3">
+                          <CheckIcon className="h-3 w-3 text-black" />
+                        </div>
+                        <span className="text-sm text-gray-300">
+                          {feature}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
 
-              <div className="space-y-4">
-                <h4 className={`font-semibold mb-4 ${plan.popular ? "text-white" : "text-gray-900"}`}>
-                  Everything included:
-                </h4>
-                <ul className="space-y-4" role="list">
-                  {plan.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center">
-                      <CheckIcon className={`h-5 w-5 mr-3 ${plan.popular ? "text-green-300" : "text-green-500"}`} aria-hidden="true" />
-                      <span className={`text-sm ${plan.popular ? "text-indigo-100" : "text-gray-600"}`}>
-                        {feature}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              {/* Corner Decorations */}
+              <div className="absolute top-4 right-4 w-8 h-8 border-t-2 border-r-2 border-cyan-400/30" />
+              <div className="absolute bottom-4 left-4 w-8 h-8 border-b-2 border-l-2 border-cyan-400/30" />
             </div>
           ))}
         </div>
 
         {/* FAQ Section */}
-        <div className="mt-20 text-center">
-          <h3 className="text-2xl font-bold text-gray-900 mb-8" id="faq-title">
-            Frequently Asked Questions
+        <div className="mt-24 text-center">
+          <h3 className="text-3xl font-bold text-white mb-12 text-mono">
+            SYSTEM.FAQ
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto" role="list" aria-labelledby="faq-title">
-            <div className="text-left">
-              <h4 className="font-semibold text-gray-900 mb-2">Can I change plans anytime?</h4>
-              <p className="text-gray-600 text-sm">Yes, you can upgrade or downgrade your plan at any time. Changes take effect immediately.</p>
-            </div>
-            <div className="text-left">
-              <h4 className="font-semibold text-gray-900 mb-2">Is there a setup fee?</h4>
-              <p className="text-gray-600 text-sm">No setup fees. Start your free trial today and begin using the platform immediately.</p>
-            </div>
-            <div className="text-left">
-              <h4 className="font-semibold text-gray-900 mb-2">What payment methods do you accept?</h4>
-              <p className="text-gray-600 text-sm">We accept all major credit cards, PayPal, and bank transfers for enterprise plans.</p>
-            </div>
-            <div className="text-left">
-              <h4 className="font-semibold text-gray-900 mb-2">Do you offer refunds?</h4>
-              <p className="text-gray-600 text-sm">Yes, we offer a 30-day money-back guarantee if you&apos;re not satisfied with our service.</p>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {[
+              {
+                question: "Can I upgrade my configuration?",
+                answer: "Yes, you can upgrade or modify your system configuration at any time. Changes are applied instantly."
+              },
+              {
+                question: "Are there setup fees?",
+                answer: "No setup fees. Initialize your trial today and begin system deployment immediately."
+              },
+              {
+                question: "What payment methods are accepted?",
+                answer: "We accept all major credit cards, PayPal, and enterprise wire transfers for large deployments."
+              },
+              {
+                question: "Do you offer refunds?",
+                answer: "Yes, we offer a 30-day money-back guarantee if our system doesn't meet your requirements."
+              }
+            ].map((faq, index) => (
+              <div key={index} className="glass-card p-6 rounded-xl text-left">
+                <h4 className="font-semibold text-white mb-3 text-mono">
+                  {faq.question}
+                </h4>
+                <p className="text-gray-400 text-sm leading-relaxed">
+                  {faq.answer}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
