@@ -7,9 +7,8 @@ import {
   ArrowTopRightOnSquareIcon 
 } from '@heroicons/react/24/outline';
 
-interface IconProps {
+interface IconProps extends React.SVGProps<SVGSVGElement> {
   className?: string;
-  [key: string]: any;
 }
 
 const navigation = {
