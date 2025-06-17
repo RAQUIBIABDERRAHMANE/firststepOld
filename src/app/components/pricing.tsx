@@ -270,7 +270,7 @@ const Pricing: React.FC = () => {
             </div>
             <div className="text-left">
               <h4 className="font-semibold text-gray-900 mb-2">Do you offer refunds?</h4>
-              <p className="text-gray-600 text-sm">Yes, we offer a 30-day money-back guarantee if you're not satisfied with our service.</p>
+              <p className="text-gray-600 text-sm">Yes, we offer a 30-day money-back guarantee if you&apos;re not satisfied with our service.</p>
             </div>
           </div>
         </div>
