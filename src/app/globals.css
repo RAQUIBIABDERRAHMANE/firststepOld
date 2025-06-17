@@ -75,18 +75,18 @@ body {
 /* Neon Glow Effects */
 .neon-glow {
   box-shadow: 
-    0 0 5px var(--neon-blue),
-    0 0 10px var(--neon-blue),
-    0 0 15px var(--neon-blue),
-    0 0 20px var(--neon-blue);
+    0 0 0px var(--neon-blue),
+    0 0 2px var(--neon-blue),
+    0 0 5vmax var(--neon-blue),
+    0 0 10px var(--neon-blue);
 }
 
 .neon-text {
   text-shadow: 
+    0 0 0px var(--neon-blue),
+    0 0 2px var(--neon-blue),
     0 0 5px var(--neon-blue),
-    0 0 10px var(--neon-blue),
-    0 0 15px var(--neon-blue),
-    0 0 20px var(--neon-blue);
+    0 0 10px var(--neon-blue);
 }
 
 /* Glass Morphism */

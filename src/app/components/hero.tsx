@@ -85,13 +85,13 @@ export default function Hero() {
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
         <div className="animate-fade-in-up">
           {/* Status Badge */}
-          <div className="inline-flex items-center rounded-full px-6 py-3 text-sm font-medium bg-white/5 text-cyan-400 border border-cyan-400/30 backdrop-blur-sm mb-12 status-online">
+          <div className="inline-flex items-center rounded-full px-6 py-3 text-sm font-medium bg-white/5 text-cyan-400 border border-cyan-400/30 backdrop-blur-sm mt-20 mb-6 status-online">
             <SparklesIcon className="w-4 h-4 mr-2" />
             <span className="text-mono">SYSTEM.STATUS: ONLINE</span>
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-hero mb-8">
+          <h1 className="text-hero mb-11">
             Next-Generation
             <br />
             <span className="relative inline-block">
@@ -103,14 +103,14 @@ export default function Hero() {
           </h1>
 
           {/* Subtitle */}
-          <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed font-light">
+          <p className="text-xl md:text-2xl text-gray-300 mb-20 max-w-4xl mx-auto leading-relaxed font-light">
             Revolutionize your business operations with our cutting-edge management platform.
             <br />
             <span className="text-cyan-400 font-medium">Built for the future. Deployed today.</span>
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-24">
             <Link href="#pricing" className="btn-primary group">
               <span className="relative z-10 flex items-center">
                 Initialize System
