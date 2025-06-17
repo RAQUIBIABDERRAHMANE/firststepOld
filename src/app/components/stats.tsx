@@ -1,14 +1,28 @@
 'use client'
 import { useEffect, useState } from 'react'
 
-const stats = [
+interface Stat {
+  id: number;
+  name: string;
+  value: number;
+  suffix: string;
+  description: string;
+}
+
+interface AnimatedCounterProps {
+  value: number;
+  suffix?: string;
+  duration?: number;
+}
+
+const stats: Stat[] = [
   { id: 1, name: 'Active Users', value: 15503, suffix: '+', description: 'Businesses trust our platform' },
   { id: 2, name: 'Daily Signups', value: 107, suffix: '', description: 'New users joining daily' },
   { id: 3, name: 'Uptime', value: 99.9, suffix: '%', description: 'Guaranteed service availability' },
   { id: 4, name: 'Revenue Growth', value: 18030, suffix: '$', description: 'Average monthly savings per client' },
 ]
 
-function AnimatedCounter({ value, suffix = '', duration = 2000 }) {
+function AnimatedCounter({ value, suffix = '', duration = 2000 }: AnimatedCounterProps) {
   const [count, setCount] = useState(0)
 
   useEffect(() => {
@@ -31,7 +45,7 @@ function AnimatedCounter({ value, suffix = '', duration = 2000 }) {
   }, [value, duration])
 
   return (
-    <span>
+    <span aria-label={`${value}${suffix}`}>
       {suffix === '$' && suffix}
       {count.toLocaleString()}
       {suffix !== '$' && suffix}
@@ -39,12 +53,12 @@ function AnimatedCounter({ value, suffix = '', duration = 2000 }) {
   )
 }
 
-export default function Stats() {
+const Stats: React.FC = () => {
   return (
-    <div className="bg-white py-24 sm:py-32">
+    <section className="bg-white py-24 sm:py-32" aria-labelledby="stats-title">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center mb-16">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+          <h2 id="stats-title" className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             Trusted by businesses worldwide
           </h2>
           <p className="mt-4 text-lg leading-8 text-gray-600">
@@ -52,9 +66,9 @@ export default function Stats() {
           </p>
         </div>
         
-        <dl className="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-4">
+        <dl className="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-4" role="list">
           {stats.map((stat) => (
-            <div key={stat.id} className="mx-auto flex max-w-xs flex-col gap-y-4 group">
+            <div key={stat.id} className="mx-auto flex max-w-xs flex-col gap-y-4 group" role="listitem">
               <dt className="text-base leading-7 text-gray-600 group-hover:text-indigo-600 transition-colors duration-300">
                 {stat.description}
               </dt>
@@ -71,36 +85,36 @@ export default function Stats() {
         {/* Additional trust indicators */}
         <div className="mt-20 border-t border-gray-200 pt-16">
           <div className="text-center">
-            <h3 className="text-lg font-semibold text-gray-900 mb-8">
+            <h3 className="text-lg font-semibold text-gray-900 mb-8" id="certifications-title">
               Certified and Compliant
             </h3>
-            <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
-              <div className="flex items-center space-x-2">
-                <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
+            <div className="flex flex-wrap justify-center items-center gap-8 opacity-60" role="list" aria-labelledby="certifications-title">
+              <div className="flex items-center space-x-2" role="listitem">
+                <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center" aria-hidden="true">
                   <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
                 </div>
                 <span className="text-sm font-medium text-gray-700">SOC 2 Certified</span>
               </div>
-              <div className="flex items-center space-x-2">
-                <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
+              <div className="flex items-center space-x-2" role="listitem">
+                <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center" aria-hidden="true">
                   <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
                 </div>
                 <span className="text-sm font-medium text-gray-700">GDPR Compliant</span>
               </div>
-              <div className="flex items-center space-x-2">
-                <div className="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center">
+              <div className="flex items-center space-x-2" role="listitem">
+                <div className="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center" aria-hidden="true">
                   <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
                 </div>
                 <span className="text-sm font-medium text-gray-700">HIPAA Ready</span>
               </div>
-              <div className="flex items-center space-x-2">
-                <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center">
+              <div className="flex items-center space-x-2" role="listitem">
+                <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center" aria-hidden="true">
                   <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
@@ -111,6 +125,8 @@ export default function Stats() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
+
+export default Stats;

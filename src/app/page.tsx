@@ -8,7 +8,7 @@ import Navbar from './components/navbar';
 export default function Home() {
   return (
     <main className="flex flex-col">
-      <div className=" z-50">
+      <div className=" z-40">
         <Navbar />
       </div>
       <Hero />
