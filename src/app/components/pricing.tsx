@@ -198,7 +198,7 @@ const Pricing: React.FC = () => {
 
         {/* Pricing Cards */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {currentPlans.map((plan, index) => (
+          {currentPlans.map((plan) => (
             <div
               key={plan.name}
               className={`relative glass-card rounded-3xl p-8 ${
