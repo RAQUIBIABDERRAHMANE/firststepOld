@@ -7,7 +7,7 @@ interface Stat {
   value: number;
   suffix: string;
   description: string;
-  gradient: string;
+  icon: string;
 }
 
 interface AnimatedCounterProps {
@@ -23,7 +23,7 @@ const stats: Stat[] = [
     value: 15503, 
     suffix: '+', 
     description: 'Deployed worldwide',
-    gradient: 'from-cyan-400 to-blue-600'
+    icon: '🚀'
   },
   { 
     id: 2, 
@@ -31,7 +31,7 @@ const stats: Stat[] = [
     value: 2400000, 
     suffix: '', 
     description: 'Transactions processed',
-    gradient: 'from-purple-400 to-pink-600'
+    icon: '⚡'
   },
   { 
     id: 3, 
@@ -39,7 +39,7 @@ const stats: Stat[] = [
     value: 99.9, 
     suffix: '%', 
     description: 'Guaranteed availability',
-    gradient: 'from-green-400 to-emerald-600'
+    icon: '🛡️'
   },
   { 
     id: 4, 
@@ -47,7 +47,7 @@ const stats: Stat[] = [
     value: 67, 
     suffix: '%', 
     description: 'Average operational savings',
-    gradient: 'from-orange-400 to-red-600'
+    icon: '💰'
   },
 ]
 
@@ -84,27 +84,20 @@ function AnimatedCounter({ value, suffix = '', duration = 2000 }: AnimatedCounte
 
 const Stats: React.FC = () => {
   return (
-    <section className="bg-black py-32 relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-cyan-400/5 rounded-full blur-3xl animate-float" />
-        <div className="absolute top-1/2 right-1/4 w-96 h-96 bg-purple-400/5 rounded-full blur-3xl animate-float" style={{ animationDelay: '3s' }} />
-      </div>
-
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+    <section className="bg-white py-24">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center mb-20">
-          <div className="inline-flex items-center rounded-full px-6 py-2 text-sm font-medium bg-cyan-400/10 text-cyan-400 border border-cyan-400/30 mb-8">
-            <span className="text-mono">SYSTEM.METRICS</span>
+          <div className="inline-flex items-center rounded-full px-4 py-2 text-sm font-medium bg-purple-100 text-purple-700 mb-8">
+            <span>Performance Metrics</span>
           </div>
           
-          <h2 className="text-section-title mb-8">
-            Global Performance Data
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            Trusted by Thousands
           </h2>
           
-          <p className="text-xl text-gray-300 leading-relaxed">
-            Real-time statistics from our distributed network of enterprise systems
-            <br />
-            <span className="text-cyan-400 font-medium">Updated every 60 seconds</span>
+          <p className="text-xl text-gray-600 leading-relaxed">
+            Real-time statistics from our global network of enterprise systems.
+            Updated every 60 seconds.
           </p>
         </div>
         
@@ -112,68 +105,58 @@ const Stats: React.FC = () => {
           {stats.map((stat, index) => (
             <div 
               key={stat.id} 
-              className="group relative glass-card p-8 rounded-2xl card-hover"
-              style={{ animationDelay: `${index * 0.2}s` }}
+              className="group relative bg-white p-8 rounded-2xl border border-gray-200 hover:border-purple-300 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+              style={{ animationDelay: `${index * 0.1}s` }}
             >
-              {/* Gradient Border Effect */}
-              <div className={`absolute inset-0 bg-gradient-to-r ${stat.gradient} opacity-0 group-hover:opacity-20 transition-opacity duration-500 rounded-2xl blur-xl`} />
-              
-              <div className="relative text-center">
-                {/* Icon/Indicator */}
-                <div className={`inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-r ${stat.gradient} p-0.5 mb-4`}>
-                  <div className="flex items-center justify-center w-full h-full bg-black rounded-xl">
-                    <div className="w-6 h-6 bg-white rounded-full animate-pulse-slow" />
-                  </div>
+              <div className="text-center">
+                {/* Icon */}
+                <div className="text-4xl mb-4">
+                  {stat.icon}
                 </div>
                 
                 {/* Value */}
-                <div className="text-4xl font-bold text-white mb-2 text-mono group-hover:text-cyan-400 transition-colors duration-300">
+                <div className="text-4xl font-bold text-gray-900 mb-2 group-hover:text-purple-600 transition-colors duration-300">
                   <AnimatedCounter value={stat.value} suffix={stat.suffix} />
                 </div>
                 
                 {/* Name */}
-                <div className="text-sm font-medium text-gray-300 mb-2 text-mono">
-                  {stat.name.toUpperCase()}
+                <div className="text-lg font-semibold text-gray-900 mb-2">
+                  {stat.name}
                 </div>
                 
                 {/* Description */}
-                <div className="text-xs text-gray-500 group-hover:text-gray-400 transition-colors duration-300">
+                <div className="text-sm text-gray-600">
                   {stat.description}
                 </div>
               </div>
-              
-              {/* Status Indicator */}
-              <div className="absolute top-4 right-4 w-3 h-3 bg-green-400 rounded-full animate-pulse-slow shadow-lg shadow-green-400/50" />
             </div>
           ))}
         </div>
 
         {/* Additional Metrics */}
-        <div className="mt-20 glass-card p-12 rounded-3xl">
+        <div className="mt-20 bg-gradient-to-r from-purple-600 to-blue-600 rounded-3xl p-12 text-white">
           <div className="text-center mb-12">
-            <h3 className="text-2xl font-bold text-white mb-4 text-mono">
-              COMPLIANCE.STATUS
+            <h3 className="text-3xl font-bold mb-4">
+              Compliance & Certifications
             </h3>
-            <p className="text-gray-400">
+            <p className="text-xl opacity-90">
               Certified and compliant with global standards
             </p>
           </div>
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { name: "SOC 2", status: "CERTIFIED", color: "text-green-400" },
-              { name: "GDPR", status: "COMPLIANT", color: "text-blue-400" },
-              { name: "HIPAA", status: "READY", color: "text-purple-400" },
-              { name: "ISO 27001", status: "VERIFIED", color: "text-orange-400" }
+              { name: "SOC 2", status: "Certified", icon: "🔒" },
+              { name: "GDPR", status: "Compliant", icon: "🛡️" },
+              { name: "HIPAA", status: "Ready", icon: "🏥" },
+              { name: "ISO 27001", status: "Verified", icon: "✅" }
             ].map((cert, index) => (
               <div key={index} className="text-center">
-                <div className="w-16 h-16 mx-auto mb-4 rounded-xl bg-white/5 flex items-center justify-center border border-white/10">
-                  <div className={`w-8 h-8 rounded-full ${cert.color.replace('text-', 'bg-')} animate-pulse-slow`} />
-                </div>
-                <div className="text-sm font-bold text-white text-mono mb-1">
+                <div className="text-3xl mb-4">{cert.icon}</div>
+                <div className="text-lg font-bold mb-1">
                   {cert.name}
                 </div>
-                <div className={`text-xs ${cert.color} text-mono`}>
+                <div className="text-sm opacity-80">
                   {cert.status}
                 </div>
               </div>

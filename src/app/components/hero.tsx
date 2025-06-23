@@ -1,18 +1,17 @@
 'use client'
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { ArrowRightIcon, PlayIcon, SparklesIcon } from "@heroicons/react/24/outline";
+import { ArrowRightIcon, PlayIcon, ChevronDownIcon } from "@heroicons/react/24/outline";
 
 export default function Hero() {
   const [currentText, setCurrentText] = useState(0);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   
   const texts = [
-    "AI-Powered Analytics",
-    "Cloud Infrastructure", 
-    "Real-time Monitoring",
-    "Smart Automation",
-    "Enterprise Security"
+    "Enterprise Management",
+    "Digital Transformation", 
+    "Business Automation",
+    "Smart Solutions",
+    "Future-Ready Systems"
   ];
 
   useEffect(() => {
@@ -22,151 +21,87 @@ export default function Hero() {
     return () => clearInterval(interval);
   }, [texts.length]);
 
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-    };
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
-
   return (
-    <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black grid-background">
-      {/* Dynamic Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        {/* Animated Orbs */}
-        <div 
-          className="absolute w-96 h-96 rounded-full opacity-20 animate-float"
-          style={{
-            background: 'radial-gradient(circle, #00d4ff 0%, transparent 70%)',
-            left: `${mousePosition.x * 0.02}px`,
-            top: `${mousePosition.y * 0.02}px`,
-            transform: 'translate(-50%, -50%)'
-          }}
-        />
-        <div 
-          className="absolute w-80 h-80 rounded-full opacity-15 animate-float"
-          style={{
-            background: 'radial-gradient(circle, #8b5cf6 0%, transparent 70%)',
-            right: `${mousePosition.x * 0.01}px`,
-            bottom: `${mousePosition.y * 0.01}px`,
-            animationDelay: '2s'
-          }}
-        />
-        <div 
-          className="absolute w-64 h-64 rounded-full opacity-10 animate-float"
-          style={{
-            background: 'radial-gradient(circle, #10b981 0%, transparent 70%)',
-            left: '20%',
-            top: '20%',
-            animationDelay: '4s'
-          }}
-        />
+    <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+      {/* Animated Background */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%239C92AC" fill-opacity="0.05"%3E%3Ccircle cx="30" cy="30" r="1"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-40" />
         
-        {/* Geometric Shapes */}
-        <div className="absolute top-20 right-20 w-32 h-32 border border-cyan-400/30 rotate-45 animate-spin-slow" />
-        <div className="absolute bottom-20 left-20 w-24 h-24 border border-purple-400/30 animate-pulse-slow" />
-        
-        {/* Floating Particles */}
-        {[...Array(20)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute w-1 h-1 bg-cyan-400 rounded-full animate-pulse-slow"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 3}s`,
-              animationDuration: `${2 + Math.random() * 3}s`
-            }}
-          />
-        ))}
+        {/* Floating Elements */}
+        <div className="absolute top-20 left-20 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-20 right-20 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-purple-500/5 to-blue-500/5 rounded-full blur-3xl" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
         <div className="animate-fade-in-up">
-          {/* Status Badge */}
-          <div className="inline-flex items-center rounded-full px-6 py-3 text-sm font-medium bg-white/5 text-cyan-400 border border-cyan-400/30 backdrop-blur-sm mt-20 mb-6 status-online">
-            <SparklesIcon className="w-4 h-4 mr-2" />
-            <span className="text-mono">SYSTEM.STATUS: ONLINE</span>
+          {/* Badge */}
+          <div className="inline-flex items-center rounded-full px-6 py-2 text-sm font-medium bg-white/10 text-white border border-white/20 backdrop-blur-sm mb-8">
+            <div className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse" />
+            <span>Next-Generation Business Solutions</span>
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-hero mb-11">
-            Next-Generation
-            <br />
-            <span className="relative inline-block">
-              <span className="neon-text">
-                {texts[currentText]}
-              </span>
-              <div className="absolute -inset-1 bg-gradient-to-r from-cyan-400 to-purple-600 rounded-lg blur opacity-20 animate-pulse-slow" />
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight mb-8">
+            <span className="block text-white">Transform Your</span>
+            <span className="block bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent">
+              {texts[currentText]}
             </span>
           </h1>
 
           {/* Subtitle */}
-          <p className="text-xl md:text-2xl text-gray-300 mb-20 max-w-4xl mx-auto leading-relaxed font-light">
-            Revolutionize your business operations with our cutting-edge management platform.
-            <br />
-            <span className="text-cyan-400 font-medium">Built for the future. Deployed today.</span>
+          <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed">
+            Streamline operations across healthcare, hospitality, logistics, and more with our 
+            comprehensive management platform designed for the modern enterprise.
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-24">
-            <Link href="#pricing" className="btn-primary group">
-              <span className="relative z-10 flex items-center">
-                Initialize System
-                <ArrowRightIcon className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
-              </span>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
+            <Link href="#pricing" className="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-purple-600 to-blue-600 rounded-xl hover:from-purple-700 hover:to-blue-700 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/25">
+              <span>Get Started Free</span>
+              <ArrowRightIcon className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
 
-            <button className="btn-secondary group">
+            <button className="group inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-white/10 border border-white/20 rounded-xl backdrop-blur-sm hover:bg-white/20 transition-all duration-300">
               <PlayIcon className="mr-2 h-5 w-5" />
               <span>Watch Demo</span>
             </button>
           </div>
 
-          {/* Stats Grid */}
+          {/* Trust Indicators */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
             {[
-              { value: "99.9%", label: "Uptime", color: "text-green-400" },
-              { value: "15K+", label: "Active Users", color: "text-cyan-400" },
-              { value: "50ms", label: "Response Time", color: "text-purple-400" },
-              { value: "24/7", label: "Support", color: "text-orange-400" }
+              { value: "99.9%", label: "Uptime", icon: "🚀" },
+              { value: "15K+", label: "Companies", icon: "🏢" },
+              { value: "50ms", label: "Response", icon: "⚡" },
+              { value: "24/7", label: "Support", icon: "🛡️" }
             ].map((stat, index) => (
-              <div key={index} className="glass-card p-6 rounded-xl">
-                <div className={`text-3xl font-bold ${stat.color} mb-2 text-mono`}>
-                  {stat.value}
-                </div>
-                <div className="text-gray-400 text-sm uppercase tracking-wider">
-                  {stat.label}
-                </div>
+              <div key={index} className="text-center">
+                <div className="text-2xl mb-2">{stat.icon}</div>
+                <div className="text-3xl font-bold text-white mb-1">{stat.value}</div>
+                <div className="text-sm text-gray-400">{stat.label}</div>
               </div>
             ))}
           </div>
 
-          {/* Tech Stack Indicators */}
-          <div className="flex flex-wrap justify-center items-center gap-6 opacity-60">
-            <div className="text-sm text-gray-400 font-mono">POWERED BY:</div>
-            {["NEXT.JS", "TYPESCRIPT", "AI/ML", "CLOUD", "BLOCKCHAIN"].map((tech, index) => (
-              <div key={index} className="px-3 py-1 bg-white/5 rounded border border-white/10 text-xs text-gray-300 font-mono">
-                {tech}
-              </div>
-            ))}
+          {/* Trusted By */}
+          <div className="text-center">
+            <p className="text-sm text-gray-400 mb-6">Trusted by industry leaders</p>
+            <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
+              {["Healthcare", "Hospitality", "Logistics", "Retail", "Manufacturing"].map((industry, index) => (
+                <div key={index} className="px-4 py-2 bg-white/5 rounded-lg border border-white/10 text-sm text-gray-300">
+                  {industry}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
 
       {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-cyan-400 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-cyan-400 rounded-full mt-2 animate-pulse" />
-        </div>
+        <ChevronDownIcon className="w-6 h-6 text-white/60" />
       </div>
-
-      {/* Corner Decorations */}
-      <div className="absolute top-0 left-0 w-32 h-32 border-l-2 border-t-2 border-cyan-400/30" />
-      <div className="absolute top-0 right-0 w-32 h-32 border-r-2 border-t-2 border-cyan-400/30" />
-      <div className="absolute bottom-0 left-0 w-32 h-32 border-l-2 border-b-2 border-cyan-400/30" />
-      <div className="absolute bottom-0 right-0 w-32 h-32 border-r-2 border-b-2 border-cyan-400/30" />
     </div>
   );
 }

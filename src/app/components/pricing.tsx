@@ -10,7 +10,6 @@ interface Plan {
   features: string[];
   popular: boolean;
   cta: string;
-  gradient: string;
 }
 
 interface Plans {
@@ -34,8 +33,7 @@ const plans: Plans = {
         "Standard security"
       ],
       popular: false,
-      cta: "Initialize Trial",
-      gradient: "from-cyan-400 to-blue-600"
+      cta: "Start Free Trial",
     },
     {
       name: "Professional",
@@ -53,8 +51,7 @@ const plans: Plans = {
         "Real-time analytics"
       ],
       popular: true,
-      cta: "Deploy System",
-      gradient: "from-purple-400 to-pink-600"
+      cta: "Start Free Trial",
     },
     {
       name: "Enterprise",
@@ -73,8 +70,7 @@ const plans: Plans = {
         "Advanced compliance"
       ],
       popular: false,
-      cta: "Contact Specialists",
-      gradient: "from-orange-400 to-red-600"
+      cta: "Contact Sales",
     }
   ],
   yearly: [
@@ -93,8 +89,7 @@ const plans: Plans = {
         "Standard security"
       ],
       popular: false,
-      cta: "Initialize Trial",
-      gradient: "from-cyan-400 to-blue-600"
+      cta: "Start Free Trial",
     },
     {
       name: "Professional",
@@ -113,8 +108,7 @@ const plans: Plans = {
         "Real-time analytics"
       ],
       popular: true,
-      cta: "Deploy System",
-      gradient: "from-purple-400 to-pink-600"
+      cta: "Start Free Trial",
     },
     {
       name: "Enterprise",
@@ -134,8 +128,7 @@ const plans: Plans = {
         "Advanced compliance"
       ],
       popular: false,
-      cta: "Contact Specialists",
-      gradient: "from-orange-400 to-red-600"
+      cta: "Contact Sales",
     }
   ]
 };
@@ -145,52 +138,45 @@ const Pricing: React.FC = () => {
   const currentPlans = isYearly ? plans.yearly : plans.monthly;
 
   return (
-    <section className="py-32 bg-black relative overflow-hidden" id="pricing">
-      {/* Background Elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-0 left-1/3 w-96 h-96 bg-purple-400/10 rounded-full blur-3xl animate-pulse-slow" />
-        <div className="absolute bottom-0 right-1/3 w-96 h-96 bg-cyan-400/10 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '2s' }} />
-      </div>
-
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section className="py-24 bg-gray-50" id="pricing">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="text-center mb-20">
-          <div className="inline-flex items-center rounded-full px-6 py-2 text-sm font-medium bg-green-400/10 text-green-400 border border-green-400/30 mb-8">
-            <span className="text-mono">PRICING.MATRIX</span>
+          <div className="inline-flex items-center rounded-full px-4 py-2 text-sm font-medium bg-purple-100 text-purple-700 mb-8">
+            <span>Pricing Plans</span>
           </div>
           
-          <h2 className="text-section-title mb-8">
-            Choose Your Configuration
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            Choose Your Plan
           </h2>
           
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto mb-12 leading-relaxed">
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-12 leading-relaxed">
             Start with a 15-day free trial. No credit card required.
-            <br />
-            <span className="text-cyan-400 font-medium">Scale as you grow.</span>
+            Scale as you grow.
           </p>
 
           {/* Pricing Toggle */}
-          <div className="flex justify-center items-center glass p-2 rounded-2xl max-w-sm mx-auto mb-16">
+          <div className="flex justify-center items-center bg-white p-1 rounded-xl max-w-sm mx-auto mb-16 border border-gray-200">
             <button
               onClick={() => setIsYearly(false)}
-              className={`flex-1 text-center transition-all duration-300 rounded-xl font-semibold py-3 px-6 text-mono ${
+              className={`flex-1 text-center transition-all duration-300 rounded-lg font-medium py-3 px-6 ${
                 !isYearly 
-                  ? "bg-gradient-to-r from-cyan-400 to-blue-600 text-black shadow-lg" 
-                  : "text-gray-400 hover:text-cyan-400"
+                  ? "bg-purple-600 text-white shadow-sm" 
+                  : "text-gray-600 hover:text-purple-600"
               }`}
             >
-              MONTHLY
+              Monthly
             </button>
             <button
               onClick={() => setIsYearly(true)}
-              className={`flex-1 text-center transition-all duration-300 rounded-xl font-semibold py-3 px-6 relative text-mono ${
+              className={`flex-1 text-center transition-all duration-300 rounded-lg font-medium py-3 px-6 relative ${
                 isYearly 
-                  ? "bg-gradient-to-r from-purple-400 to-pink-600 text-black shadow-lg" 
-                  : "text-gray-400 hover:text-purple-400"
+                  ? "bg-purple-600 text-white shadow-sm" 
+                  : "text-gray-600 hover:text-purple-600"
               }`}
             >
-              YEARLY
+              Yearly
               <span className="absolute -top-2 -right-2 bg-green-500 text-white text-xs px-2 py-1 rounded-full">
-                -20%
+                Save 20%
               </span>
             </button>
           </div>
@@ -198,45 +184,42 @@ const Pricing: React.FC = () => {
 
         {/* Pricing Cards */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {currentPlans.map((plan) => (
+          {currentPlans.map((plan, index) => (
             <div
               key={plan.name}
-              className={`relative glass-card rounded-3xl p-8 ${
+              className={`relative bg-white rounded-2xl p-8 border transition-all duration-300 hover:shadow-xl ${
                 plan.popular
-                  ? "scale-105 lg:scale-110 border-2 border-purple-400/50"
-                  : ""
-              } card-hover`}
+                  ? "border-purple-300 shadow-lg scale-105"
+                  : "border-gray-200 hover:border-purple-200"
+              }`}
             >
               {/* Popular Badge */}
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <div className="bg-gradient-to-r from-purple-400 to-pink-600 text-black px-6 py-2 rounded-full text-sm font-bold shadow-lg flex items-center">
+                  <div className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-2 rounded-full text-sm font-semibold shadow-lg flex items-center">
                     <StarIcon className="w-4 h-4 mr-1" />
-                    MOST_POPULAR
+                    Most Popular
                   </div>
                 </div>
               )}
 
-              {/* Gradient Border Effect */}
-              <div className={`absolute inset-0 bg-gradient-to-r ${plan.gradient} opacity-0 hover:opacity-10 transition-opacity duration-500 rounded-3xl blur-xl`} />
-
-              <div className="relative">
+              <div>
                 {/* Header */}
                 <div className="text-center mb-8">
-                  <h3 className="text-2xl font-bold text-white mb-2 text-mono">
-                    {plan.name.toUpperCase()}
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                    {plan.name}
                   </h3>
-                  <p className="text-sm text-gray-400 mb-6">
+                  <p className="text-gray-600 mb-6">
                     {plan.description}
                   </p>
                   
                   {/* Price */}
                   <div className="mb-6">
                     <div className="flex items-baseline justify-center">
-                      <span className="text-5xl font-bold text-white">
+                      <span className="text-5xl font-bold text-gray-900">
                         ${plan.price}
                       </span>
-                      <span className="text-lg ml-1 text-gray-400">
+                      <span className="text-lg ml-1 text-gray-600">
                         /{isYearly ? "year" : "month"}
                       </span>
                     </div>
@@ -245,7 +228,7 @@ const Pricing: React.FC = () => {
                         <span className="text-sm line-through text-gray-500">
                           ${plan.originalPrice}/year
                         </span>
-                        <span className="ml-2 text-sm font-semibold text-green-400">
+                        <span className="ml-2 text-sm font-semibold text-green-600">
                           Save ${plan.originalPrice - plan.price}
                         </span>
                       </div>
@@ -254,28 +237,28 @@ const Pricing: React.FC = () => {
 
                   {/* CTA Button */}
                   <button
-                    className={`w-full py-4 px-6 rounded-xl font-semibold transition-all duration-300 text-mono ${
+                    className={`w-full py-4 px-6 rounded-xl font-semibold transition-all duration-300 ${
                       plan.popular
-                        ? "bg-gradient-to-r from-purple-400 to-pink-600 text-black hover:scale-105 shadow-lg"
-                        : "bg-white/10 text-white hover:bg-white/20 border border-white/20"
+                        ? "bg-gradient-to-r from-purple-600 to-blue-600 text-white hover:from-purple-700 hover:to-blue-700 shadow-lg"
+                        : "bg-gray-100 text-gray-900 hover:bg-gray-200 border border-gray-200"
                     }`}
                   >
-                    {plan.cta.toUpperCase()}
+                    {plan.cta}
                   </button>
                 </div>
 
                 {/* Features */}
                 <div className="space-y-4">
-                  <h4 className="font-semibold text-white mb-4 text-mono">
-                    SYSTEM.FEATURES:
+                  <h4 className="font-semibold text-gray-900 mb-4">
+                    What's included:
                   </h4>
                   <ul className="space-y-3">
                     {plan.features.map((feature, featureIndex) => (
                       <li key={featureIndex} className="flex items-center">
-                        <div className="flex-shrink-0 w-5 h-5 rounded-full bg-gradient-to-r from-green-400 to-emerald-600 flex items-center justify-center mr-3">
-                          <CheckIcon className="h-3 w-3 text-black" />
+                        <div className="flex-shrink-0 w-5 h-5 rounded-full bg-green-100 flex items-center justify-center mr-3">
+                          <CheckIcon className="h-3 w-3 text-green-600" />
                         </div>
-                        <span className="text-sm text-gray-300">
+                        <span className="text-gray-600">
                           {feature}
                         </span>
                       </li>
@@ -283,43 +266,39 @@ const Pricing: React.FC = () => {
                   </ul>
                 </div>
               </div>
-
-              {/* Corner Decorations */}
-              <div className="absolute top-4 right-4 w-8 h-8 border-t-2 border-r-2 border-cyan-400/30" />
-              <div className="absolute bottom-4 left-4 w-8 h-8 border-b-2 border-l-2 border-cyan-400/30" />
             </div>
           ))}
         </div>
 
         {/* FAQ Section */}
         <div className="mt-24 text-center">
-          <h3 className="text-3xl font-bold text-white mb-12 text-mono">
-            SYSTEM.FAQ
+          <h3 className="text-3xl font-bold text-gray-900 mb-12">
+            Frequently Asked Questions
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {[
               {
-                question: "Can I upgrade my configuration?",
-                answer: "Yes, you can upgrade or modify your system configuration at any time. Changes are applied instantly."
+                question: "Can I upgrade my plan anytime?",
+                answer: "Yes, you can upgrade or downgrade your plan at any time. Changes are applied immediately."
               },
               {
                 question: "Are there setup fees?",
-                answer: "No setup fees. Initialize your trial today and begin system deployment immediately."
+                answer: "No setup fees. Start your free trial today and begin using the platform immediately."
               },
               {
-                question: "What payment methods are accepted?",
-                answer: "We accept all major credit cards, PayPal, and enterprise wire transfers for large deployments."
+                question: "What payment methods do you accept?",
+                answer: "We accept all major credit cards, PayPal, and enterprise wire transfers."
               },
               {
                 question: "Do you offer refunds?",
-                answer: "Yes, we offer a 30-day money-back guarantee if our system doesn't meet your requirements."
+                answer: "Yes, we offer a 30-day money-back guarantee if our platform doesn't meet your needs."
               }
             ].map((faq, index) => (
-              <div key={index} className="glass-card p-6 rounded-xl text-left">
-                <h4 className="font-semibold text-white mb-3 text-mono">
+              <div key={index} className="bg-white p-6 rounded-xl text-left border border-gray-200">
+                <h4 className="font-semibold text-gray-900 mb-3">
                   {faq.question}
                 </h4>
-                <p className="text-gray-400 text-sm leading-relaxed">
+                <p className="text-gray-600 leading-relaxed">
                   {faq.answer}
                 </p>
               </div>
