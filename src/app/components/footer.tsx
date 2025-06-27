@@ -69,8 +69,25 @@ const navigation = {
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white" id="contact">
-      <div className="mx-auto max-w-7xl px-6 py-20 sm:py-24 lg:px-8 lg:py-32">
+    <footer className="bg-black text-white relative overflow-hidden" id="contact">
+      {/* Background Pattern */}
+      <div className="absolute inset-0">
+        <div 
+          className="absolute inset-0 opacity-5"
+          style={{
+            backgroundImage: `
+              linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)
+            `,
+            backgroundSize: '40px 40px'
+          }}
+        />
+        {/* Geometric decorations */}
+        <div className="absolute top-20 right-20 w-32 h-32 border border-blue-500/10 rotate-45" />
+        <div className="absolute bottom-20 left-20 w-24 h-24 border border-purple-500/10 rounded-full" />
+      </div>
+
+      <div className="relative mx-auto max-w-7xl px-6 py-20 sm:py-24 lg:px-8 lg:py-32">
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           {/* Brand Section */}
           <div className="space-y-8">
@@ -85,13 +102,13 @@ export default function Footer() {
                     className="h-12 w-auto filter invert group-hover:opacity-80 transition-opacity duration-300"
                   />
                 </div>
-                <span className="ml-3 text-2xl font-bold text-white group-hover:text-purple-400 transition-colors duration-300">
+                <span className="ml-3 text-2xl font-bold text-white group-hover:text-cyan-400 transition-colors duration-300">
                   First Step
                 </span>
               </Link>
             </div>
             
-            <p className="text-gray-400 max-w-md leading-relaxed">
+            <p className="text-gray-400 max-w-md leading-relaxed font-light">
               Next-generation enterprise management systems powered by AI and built for the future.
               Transforming businesses worldwide.
             </p>
@@ -104,7 +121,7 @@ export default function Footer() {
                   href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-purple-400 transition-colors duration-300 p-2 rounded-lg hover:bg-gray-800"
+                  className="text-gray-400 hover:text-cyan-400 transition-colors duration-300 p-2 rounded-lg hover:bg-white/5"
                 >
                   <span className="sr-only">{item.name}</span>
                   <item.icon aria-hidden="true" className="h-6 w-6" />
@@ -117,13 +134,13 @@ export default function Footer() {
           <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
             <div className="md:grid md:grid-cols-2 md:gap-8">
               <div>
-                <h3 className="text-sm font-semibold leading-6 text-white">Solutions</h3>
+                <h3 className="text-sm font-semibold leading-6 text-white uppercase tracking-wider">Solutions</h3>
                 <ul role="list" className="mt-6 space-y-4">
                   {navigation.solutions.map((item) => (
                     <li key={item.name}>
                       <Link
                         href={item.href}
-                        className="text-sm leading-6 text-gray-400 hover:text-purple-400 transition-colors duration-300"
+                        className="text-sm leading-6 text-gray-400 hover:text-cyan-400 transition-colors duration-300"
                       >
                         {item.name}
                       </Link>
@@ -132,13 +149,13 @@ export default function Footer() {
                 </ul>
               </div>
               <div className="mt-10 md:mt-0">
-                <h3 className="text-sm font-semibold leading-6 text-white">Support</h3>
+                <h3 className="text-sm font-semibold leading-6 text-white uppercase tracking-wider">Support</h3>
                 <ul role="list" className="mt-6 space-y-4">
                   {navigation.support.map((item) => (
                     <li key={item.name}>
                       <Link
                         href={item.href}
-                        className="text-sm leading-6 text-gray-400 hover:text-purple-400 transition-colors duration-300"
+                        className="text-sm leading-6 text-gray-400 hover:text-cyan-400 transition-colors duration-300"
                       >
                         {item.name}
                       </Link>
@@ -149,13 +166,13 @@ export default function Footer() {
             </div>
             <div className="md:grid md:grid-cols-2 md:gap-8">
               <div>
-                <h3 className="text-sm font-semibold leading-6 text-white">Company</h3>
+                <h3 className="text-sm font-semibold leading-6 text-white uppercase tracking-wider">Company</h3>
                 <ul role="list" className="mt-6 space-y-4">
                   {navigation.company.map((item) => (
                     <li key={item.name}>
                       <Link
                         href={item.href}
-                        className="text-sm leading-6 text-gray-400 hover:text-purple-400 transition-colors duration-300"
+                        className="text-sm leading-6 text-gray-400 hover:text-cyan-400 transition-colors duration-300"
                       >
                         {item.name}
                       </Link>
@@ -164,13 +181,13 @@ export default function Footer() {
                 </ul>
               </div>
               <div className="mt-10 md:mt-0">
-                <h3 className="text-sm font-semibold leading-6 text-white">Legal</h3>
+                <h3 className="text-sm font-semibold leading-6 text-white uppercase tracking-wider">Legal</h3>
                 <ul role="list" className="mt-6 space-y-4">
                   {navigation.legal.map((item) => (
                     <li key={item.name}>
                       <Link
                         href={item.href}
-                        className="text-sm leading-6 text-gray-400 hover:text-purple-400 transition-colors duration-300"
+                        className="text-sm leading-6 text-gray-400 hover:text-cyan-400 transition-colors duration-300"
                       >
                         {item.name}
                       </Link>
@@ -183,18 +200,18 @@ export default function Footer() {
         </div>
 
         {/* Contact Information */}
-        <div className="mt-16 border-t border-gray-800 pt-16">
+        <div className="mt-16 border-t border-white/10 pt-16">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-gray-800 p-6 rounded-xl">
+            <div className="bg-white/5 backdrop-blur-sm p-6 rounded-xl border border-white/10 hover:bg-white/10 transition-colors duration-300">
               <div className="flex items-center space-x-3">
-                <div className="w-10 h-10 rounded-lg bg-purple-600 flex items-center justify-center">
-                  <PhoneIcon className="h-5 w-5 text-white" />
+                <div className="w-10 h-10 rounded-lg bg-cyan-500/20 border border-cyan-500/30 flex items-center justify-center">
+                  <PhoneIcon className="h-5 w-5 text-cyan-400" />
                 </div>
                 <div>
                   <p className="text-sm font-semibold text-white">Phone</p>
                   <Link 
                     href="tel:+212665830816" 
-                    className="text-sm text-gray-400 hover:text-purple-400 transition-colors duration-300"
+                    className="text-sm text-gray-400 hover:text-cyan-400 transition-colors duration-300"
                   >
                     +212 665 830 816
                   </Link>
@@ -202,16 +219,16 @@ export default function Footer() {
               </div>
             </div>
             
-            <div className="bg-gray-800 p-6 rounded-xl">
+            <div className="bg-white/5 backdrop-blur-sm p-6 rounded-xl border border-white/10 hover:bg-white/10 transition-colors duration-300">
               <div className="flex items-center space-x-3">
-                <div className="w-10 h-10 rounded-lg bg-purple-600 flex items-center justify-center">
-                  <EnvelopeIcon className="h-5 w-5 text-white" />
+                <div className="w-10 h-10 rounded-lg bg-cyan-500/20 border border-cyan-500/30 flex items-center justify-center">
+                  <EnvelopeIcon className="h-5 w-5 text-cyan-400" />
                 </div>
                 <div>
                   <p className="text-sm font-semibold text-white">Email</p>
                   <Link 
                     href="mailto:support@firststep.uno" 
-                    className="text-sm text-gray-400 hover:text-purple-400 transition-colors duration-300"
+                    className="text-sm text-gray-400 hover:text-cyan-400 transition-colors duration-300"
                   >
                     support@firststep.uno
                   </Link>
@@ -219,10 +236,10 @@ export default function Footer() {
               </div>
             </div>
             
-            <div className="bg-gray-800 p-6 rounded-xl">
+            <div className="bg-white/5 backdrop-blur-sm p-6 rounded-xl border border-white/10 hover:bg-white/10 transition-colors duration-300">
               <div className="flex items-center space-x-3">
-                <div className="w-10 h-10 rounded-lg bg-purple-600 flex items-center justify-center">
-                  <MapPinIcon className="h-5 w-5 text-white" />
+                <div className="w-10 h-10 rounded-lg bg-cyan-500/20 border border-cyan-500/30 flex items-center justify-center">
+                  <MapPinIcon className="h-5 w-5 text-cyan-400" />
                 </div>
                 <div>
                   <p className="text-sm font-semibold text-white">Location</p>
@@ -234,9 +251,9 @@ export default function Footer() {
         </div>
 
         {/* Bottom section */}
-        <div className="mt-16 border-t border-gray-800 pt-8">
+        <div className="mt-16 border-t border-white/10 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-sm text-gray-400">
+            <p className="text-sm text-gray-400 font-light">
               © 2024 First Step. All rights reserved.
             </p>
             <div className="mt-4 md:mt-0 flex items-center space-x-4">
