@@ -201,7 +201,7 @@ const Pricing: React.FC = () => {
 
         {/* Pricing Cards */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {currentPlans.map((plan, index) => (
+          {currentPlans.map((plan) => (
             <div
               key={plan.name}
               className={`relative bg-white/5 backdrop-blur-sm rounded-2xl p-8 border transition-all duration-300 hover:-translate-y-2 ${
@@ -270,7 +270,7 @@ const Pricing: React.FC = () => {
                 {/* Features */}
                 <div className="space-y-4">
                   <h4 className="font-semibold text-white mb-4">
-                    What's included:
+                    What&apos;s included:
                   </h4>
                   <ul className="space-y-3">
                     {plan.features.map((feature, featureIndex) => (
