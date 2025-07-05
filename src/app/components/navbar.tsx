@@ -58,6 +58,11 @@ const features = [
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -69,7 +74,7 @@ export default function Navbar() {
 
   return (
     <header className={`fixed top-0 w-full z-50 transition-all duration-500 ${
-      scrolled 
+      mounted && scrolled 
         ? 'glass-card border-b border-cyan-400/20 shadow-lg shadow-cyan-400/10' 
         : 'bg-transparent'
     }`}>

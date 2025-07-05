@@ -6,6 +6,7 @@ import { ArrowRightIcon, PlayIcon, SparklesIcon } from "@heroicons/react/24/outl
 export default function Hero() {
   const [currentText, setCurrentText] = useState(0);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [mounted, setMounted] = useState(false);
   
   const texts = [
     "Neural Networks",
@@ -14,6 +15,10 @@ export default function Hero() {
     "Blockchain Systems",
     "Metaverse Ready"
   ];
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -40,31 +45,35 @@ export default function Hero() {
         {/* Cyber Grid */}
         <div className="absolute inset-0 cyber-grid opacity-30" />
         
-        {/* Floating Particles */}
-        <div className="particles">
-          {[...Array(20)].map((_, i) => (
-            <div
-              key={i}
-              className="particle"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 6}s`,
-                animationDuration: `${6 + Math.random() * 4}s`
-              }}
-            />
-          ))}
-        </div>
+        {/* Floating Particles - Only render client-side */}
+        {mounted && (
+          <div className="particles">
+            {[...Array(20)].map((_, i) => (
+              <div
+                key={i}
+                className="particle"
+                style={{
+                  left: `${Math.random() * 100}%`,
+                  top: `${Math.random() * 100}%`,
+                  animationDelay: `${Math.random() * 6}s`,
+                  animationDuration: `${6 + Math.random() * 4}s`
+                }}
+              />
+            ))}
+          </div>
+        )}
         
-        {/* Interactive Light Effect */}
-        <div 
-          className="absolute w-96 h-96 rounded-full opacity-20 pointer-events-none transition-all duration-300 ease-out"
-          style={{
-            background: `radial-gradient(circle, rgba(0, 212, 255, 0.3) 0%, transparent 70%)`,
-            left: mousePosition.x - 192,
-            top: mousePosition.y - 192,
-          }}
-        />
+        {/* Interactive Light Effect - Only render client-side */}
+        {mounted && (
+          <div 
+            className="absolute w-96 h-96 rounded-full opacity-20 pointer-events-none transition-all duration-300 ease-out"
+            style={{
+              background: `radial-gradient(circle, rgba(0, 212, 255, 0.3) 0%, transparent 70%)`,
+              left: mousePosition.x - 192,
+              top: mousePosition.y - 192,
+            }}
+          />
+        )}
         
         {/* Geometric Shapes */}
         <div className="absolute top-20 left-20 w-32 h-32 border border-cyan-400/30 rotate-45 animate-float neural-border" />

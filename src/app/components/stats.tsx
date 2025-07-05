@@ -74,7 +74,7 @@ function AnimatedCounter({ value, suffix = '', duration = 2000 }: AnimatedCounte
   }, [value, duration])
 
   return (
-    <span>
+    <span suppressHydrationWarning={true}>
       {suffix === '$' && suffix}
       {count.toLocaleString()}
       {suffix !== '$' && suffix}
