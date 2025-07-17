@@ -1,14 +1,12 @@
 'use client'
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import SignupForm from "./signup-form";
 import { ArrowRightIcon, PlayIcon, SparklesIcon } from "@heroicons/react/24/outline";
 
 export default function Hero() {
   const [currentText, setCurrentText] = useState(0);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [mounted, setMounted] = useState(false);
-  const [signupOpen, setSignupOpen] = useState(false);
   
   const texts = [
     "Neural Networks",
@@ -109,13 +107,13 @@ export default function Hero() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
-            <button 
-              onClick={() => setSignupOpen(true)}
+            <a 
+              href="#signup"
               className="group px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-200 flex items-center"
             >
               Get Started
               <ArrowRightIcon className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
-            </button>
+            </a>
 
             <button className="group px-8 py-4 border border-gray-600 text-gray-300 font-semibold rounded-lg hover:bg-gray-800 hover:border-gray-500 transition-all duration-200 flex items-center">
               <PlayIcon className="mr-2 h-5 w-5" />
@@ -177,9 +175,6 @@ export default function Hero() {
           <div className="w-1 h-3 bg-gray-400 rounded-full mt-2 animate-bounce" />
         </div>
       </div>
-
-      {/* Signup Form Modal */}
-      <SignupForm isOpen={signupOpen} onClose={() => setSignupOpen(false)} />
     </div>
   );
 }

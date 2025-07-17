@@ -1,6 +1,5 @@
 'use client'
 import { useState, useEffect } from 'react'
-import SignupForm from './signup-form'
 import {
   Dialog,
   DialogPanel,
@@ -60,7 +59,6 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [mounted, setMounted] = useState(false)
-  const [signupOpen, setSignupOpen] = useState(false)
 
   useEffect(() => {
     setMounted(true);
@@ -170,12 +168,12 @@ export default function Navbar() {
         {/* CTA Button */}
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <div className="flex items-center space-x-4">
-            <button 
-              onClick={() => setSignupOpen(true)}
-              className="px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-200"
+            <a 
+              href="#signup"
+              className="px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-200 inline-block"
             >
               Sign Up
-            </button>
+            </a>
             <Link href="#pricing" className="px-6 py-2 border border-blue-500 text-blue-400 font-semibold rounded-lg hover:bg-blue-500/10 transition-all duration-200">
               Pricing
             </Link>
@@ -255,15 +253,13 @@ export default function Navbar() {
               
               <div className="py-6">
                 <div className="space-y-3">
-                  <button
-                    onClick={() => {
-                      setSignupOpen(true)
-                      setMobileMenuOpen(false)
-                    }}
-                    className="w-full py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-200"
+                  <a
+                    href="#signup"
+                    className="block w-full py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-200 text-center"
+                    onClick={() => setMobileMenuOpen(false)}
                   >
                     Sign Up
-                  </button>
+                  </a>
                   <Link
                     href="#pricing"
                     className="block w-full py-3 text-center border border-blue-500 text-blue-400 font-semibold rounded-lg hover:bg-blue-500/10 transition-all duration-200"
@@ -277,9 +273,6 @@ export default function Navbar() {
           </div>
         </DialogPanel>
       </Dialog>
-
-      {/* Signup Form Modal */}
-      <SignupForm isOpen={signupOpen} onClose={() => setSignupOpen(false)} />
 
       <style jsx>{`
         .nav-link {
