@@ -1,12 +1,14 @@
 'use client'
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import SignupForm from "./signup-form";
 import { ArrowRightIcon, PlayIcon, SparklesIcon } from "@heroicons/react/24/outline";
 
 export default function Hero() {
   const [currentText, setCurrentText] = useState(0);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [mounted, setMounted] = useState(false);
+  const [signupOpen, setSignupOpen] = useState(false);
   
   const texts = [
     "Neural Networks",
@@ -92,52 +94,51 @@ export default function Hero() {
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold leading-tight mb-8">
-            <span className="block text-white mb-4 animate-hologram">Transform</span>
-            <span className="block plasma-text animate-data-flow">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-8">
+            <span className="block text-white mb-4">Enterprise Management</span>
+            <span className="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
               {texts[currentText]}
             </span>
           </h1>
 
           {/* Subtitle */}
-          <p className="text-xl md:text-2xl text-gray-400 mb-12 max-w-4xl mx-auto leading-relaxed font-light">
-            Next-generation enterprise platform powered by{' '}
-            <span className="neon-text">Artificial Intelligence</span>. 
-            Streamline operations across healthcare, hospitality, logistics, and beyond with{' '}
-            <span className="text-gradient-cyber">quantum-ready architecture</span>.
+          <p className="text-lg md:text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
+            Professional enterprise management solutions for healthcare, hospitality, logistics, and more. 
+            Streamline your operations with our comprehensive platform designed for modern businesses.
           </p>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
-            <Link href="#pricing" className="group quantum-btn micro-bounce">
-              <span className="relative z-10 flex items-center">
-                Initialize System
-                <ArrowRightIcon className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
-              </span>
-            </Link>
+            <button 
+              onClick={() => setSignupOpen(true)}
+              className="group px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-200 flex items-center"
+            >
+              Get Started
+              <ArrowRightIcon className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
+            </button>
 
-            <button className="group btn-secondary micro-glow">
+            <button className="group px-8 py-4 border border-gray-600 text-gray-300 font-semibold rounded-lg hover:bg-gray-800 hover:border-gray-500 transition-all duration-200 flex items-center">
               <PlayIcon className="mr-2 h-5 w-5" />
-              <span>Neural Demo</span>
+              Watch Demo
             </button>
           </div>
 
           {/* Enhanced Stats Grid */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
             {[
-              { value: "99.9%", label: "Uptime", sublabel: "SLA Guaranteed", icon: "🛡️" },
-              { value: "15K+", label: "Enterprises", sublabel: "Worldwide", icon: "🌐" },
-              { value: "<10ms", label: "Response", sublabel: "Neural Speed", icon: "⚡" },
-              { value: "24/7", label: "AI Support", sublabel: "Global Coverage", icon: "🤖" }
+              { value: "99.9%", label: "Uptime", sublabel: "Guaranteed", icon: "🛡️" },
+              { value: "5K+", label: "Companies", sublabel: "Trust Us", icon: "🌐" },
+              { value: "24/7", label: "Support", sublabel: "Available", icon: "⚡" },
+              { value: "50+", label: "Countries", sublabel: "Worldwide", icon: "🌍" }
             ].map((stat, index) => (
-              <div key={index} className="text-center group glass-card p-6 rounded-2xl card-hover delay-100" style={{ animationDelay: `${index * 0.1}s` }}>
-                <div className="text-4xl mb-3 animate-float" style={{ animationDelay: `${index * 0.2}s` }}>
+              <div key={index} className="text-center group bg-white/5 backdrop-blur-sm p-6 rounded-xl border border-white/10 hover:bg-white/10 transition-all duration-300">
+                <div className="text-3xl mb-3">
                   {stat.icon}
                 </div>
-                <div className="text-3xl md:text-4xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors duration-300 neon-text">
+                <div className="text-2xl md:text-3xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors duration-300">
                   {stat.value}
                 </div>
-                <div className="text-sm font-medium text-gray-300 mb-1 text-mono">
+                <div className="text-sm font-medium text-gray-300 mb-1">
                   {stat.label}
                 </div>
                 <div className="text-xs text-gray-500">
@@ -149,20 +150,20 @@ export default function Hero() {
 
           {/* Technology Stack */}
           <div className="text-center">
-            <p className="text-sm text-gray-500 mb-6 uppercase tracking-wider text-mono">POWERED_BY</p>
+            <p className="text-sm text-gray-500 mb-6 uppercase tracking-wider">Powered By</p>
             <div className="flex flex-wrap justify-center items-center gap-6 opacity-80">
               {[
-                { name: "AI/ML", color: "from-cyan-400 to-blue-500" },
-                { name: "Quantum", color: "from-purple-400 to-pink-500" },
-                { name: "Blockchain", color: "from-green-400 to-emerald-500" },
-                { name: "Neural", color: "from-orange-400 to-red-500" },
-                { name: "Metaverse", color: "from-indigo-400 to-purple-500" }
+                { name: "React", color: "from-blue-400 to-blue-600" },
+                { name: "Next.js", color: "from-gray-400 to-gray-600" },
+                { name: "TypeScript", color: "from-blue-500 to-blue-700" },
+                { name: "Node.js", color: "from-green-400 to-green-600" },
+                { name: "PostgreSQL", color: "from-blue-600 to-indigo-600" }
               ].map((tech, index) => (
                 <div 
                   key={index} 
-                  className={`px-6 py-3 glass-card rounded-xl border border-white/20 text-sm text-gray-300 hover:text-white transition-all duration-300 micro-bounce neural-border bg-gradient-to-r ${tech.color} bg-opacity-10`}
+                  className={`px-4 py-2 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10 text-sm text-gray-300 hover:text-white transition-all duration-300`}
                 >
-                  <span className="text-mono">{tech.name}</span>
+                  <span>{tech.name}</span>
                 </div>
               ))}
             </div>
@@ -172,26 +173,13 @@ export default function Hero() {
 
       {/* Enhanced Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-        <div className="w-6 h-10 border-2 border-cyan-400/50 rounded-full flex justify-center relative">
-          <div className="w-1 h-3 bg-cyan-400 rounded-full mt-2 animate-bounce" />
-          <div className="absolute inset-0 border-2 border-cyan-400/30 rounded-full animate-pulse" />
+        <div className="w-6 h-10 border-2 border-gray-400/50 rounded-full flex justify-center relative">
+          <div className="w-1 h-3 bg-gray-400 rounded-full mt-2 animate-bounce" />
         </div>
       </div>
 
-      {/* Data Streams */}
-      <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
-        {[...Array(5)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute h-px bg-gradient-to-r from-transparent via-cyan-400/50 to-transparent data-stream"
-            style={{
-              top: `${20 + i * 20}%`,
-              width: '100%',
-              animationDelay: `${i * 0.5}s`
-            }}
-          />
-        ))}
-      </div>
+      {/* Signup Form Modal */}
+      <SignupForm isOpen={signupOpen} onClose={() => setSignupOpen(false)} />
     </div>
   );
 }

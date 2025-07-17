@@ -9,17 +9,17 @@ import {
 
 const features = [
   {
-    name: 'Neural Analytics',
-    description: 'Advanced machine learning algorithms with quantum-enhanced processing capabilities, providing predictive insights and autonomous decision-making systems.',
+    name: 'Advanced Analytics',
+    description: 'Comprehensive data analytics and reporting tools that provide actionable insights to help you make informed business decisions.',
     icon: CpuChipIcon,
-    color: 'text-cyan-400',
-    bgColor: 'bg-cyan-500/10',
-    borderColor: 'border-cyan-500/20',
-    gradient: 'from-cyan-400 to-blue-500',
+    color: 'text-blue-500',
+    bgColor: 'bg-blue-500/10',
+    borderColor: 'border-blue-500/20',
+    gradient: 'from-blue-400 to-blue-600',
   },
   {
-    name: 'Quantum Security',
-    description: 'Military-grade quantum encryption, zero-trust architecture, and compliance with GDPR, HIPAA, and SOC 2 standards with blockchain verification.',
+    name: 'Enterprise Security',
+    description: 'Bank-level security with encryption, multi-factor authentication, and compliance with GDPR, HIPAA, and SOC 2 standards.',
     icon: ShieldCheckIcon,
     color: 'text-green-400',
     bgColor: 'bg-green-500/10',
@@ -27,8 +27,8 @@ const features = [
     gradient: 'from-green-400 to-emerald-500',
   },
   {
-    name: 'Cloud Matrix',
-    description: 'Globally distributed quantum cloud architecture with 99.99% uptime guarantee, auto-scaling, and edge computing for instantaneous performance.',
+    name: 'Cloud Infrastructure',
+    description: 'Scalable cloud architecture with 99.9% uptime guarantee, automatic backups, and global content delivery network.',
     icon: CloudIcon,
     color: 'text-purple-400',
     bgColor: 'bg-purple-500/10',
@@ -36,8 +36,8 @@ const features = [
     gradient: 'from-purple-400 to-pink-500',
   },
   {
-    name: 'Plasma Processing',
-    description: 'Process billions of transactions per second with our quantum computing infrastructure and real-time neural synchronization protocols.',
+    name: 'High Performance',
+    description: 'Optimized for speed and efficiency, handling thousands of concurrent users with real-time data processing.',
     icon: BoltIcon,
     color: 'text-yellow-400',
     bgColor: 'bg-yellow-500/10',
@@ -45,22 +45,22 @@ const features = [
     gradient: 'from-yellow-400 to-orange-500',
   },
   {
-    name: 'Holographic Analytics',
-    description: 'Immersive 3D dashboards with AI-powered KPIs, real-time monitoring, and predictive modeling for data-driven decision making.',
+    name: 'Business Intelligence',
+    description: 'Interactive dashboards with real-time KPIs, customizable reports, and predictive analytics for strategic planning.',
     icon: ChartBarIcon,
-    color: 'text-indigo-400',
-    bgColor: 'bg-indigo-500/10',
-    borderColor: 'border-indigo-500/20',
-    gradient: 'from-indigo-400 to-purple-500',
+    color: 'text-blue-400',
+    bgColor: 'bg-blue-500/10',
+    borderColor: 'border-blue-500/20',
+    gradient: 'from-blue-400 to-indigo-500',
   },
   {
-    name: 'Neural Automation',
-    description: 'Intelligent workflow automation with quantum AI-driven process optimization, reducing manual tasks by up to 95% and increasing efficiency.',
+    name: 'Process Automation',
+    description: 'Streamline workflows with intelligent automation, reducing manual tasks and increasing operational efficiency.',
     icon: CogIcon,
-    color: 'text-pink-400',
-    bgColor: 'bg-pink-500/10',
-    borderColor: 'border-pink-500/20',
-    gradient: 'from-pink-400 to-red-500',
+    color: 'text-gray-400',
+    bgColor: 'bg-gray-500/10',
+    borderColor: 'border-gray-500/20',
+    gradient: 'from-gray-400 to-gray-600',
   },
 ]
 
@@ -92,19 +92,19 @@ export default function Features() {
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center mb-20">
-          <div className="inline-flex items-center rounded-full px-6 py-3 text-sm font-medium glass-card text-gray-400 border border-cyan-400/20 mb-8 neural-border">
-            <span className="uppercase tracking-wider text-mono">CORE.CAPABILITIES</span>
+          <div className="inline-flex items-center rounded-full px-6 py-3 text-sm font-medium bg-white/5 text-gray-400 border border-white/10 mb-8">
+            <span className="uppercase tracking-wider">Core Features</span>
           </div>
           
-          <h2 className="text-section-title mb-6 animate-hologram">
-            Built for Scale
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            Enterprise-Grade Features
           </h2>
           
           <p className="text-xl text-gray-400 leading-relaxed font-light">
-            Enterprise-grade features designed to transform your business operations.
-            Every component engineered for{' '}
-            <span className="neon-text">quantum performance</span> and{' '}
-            <span className="text-gradient-cyber">neural reliability</span>.
+            Comprehensive features designed to streamline your business operations and drive growth.
+            Built with modern technology for{' '}
+            <span className="text-blue-400">reliability</span> and{' '}
+            <span className="text-purple-400">scalability</span>.
           </p>
         </div>
         
@@ -112,22 +112,19 @@ export default function Features() {
           {features.map((feature, index) => (
             <div
               key={feature.name}
-              className="group relative glass-card rounded-2xl p-8 border border-white/10 hover:border-cyan-400/30 transition-all duration-500 card-hover neural-border"
+              className="group relative bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-blue-400/30 transition-all duration-300 hover:-translate-y-2"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              {/* Holographic Corner */}
-              <div className="absolute top-4 right-4 w-8 h-8 border-t-2 border-r-2 border-cyan-400/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              
               {/* Icon */}
               <div className="mb-6">
-                <div className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl glass-card border border-white/10 group-hover:border-cyan-400/30 group-hover:scale-110 transition-all duration-300 bg-gradient-to-r ${feature.gradient} bg-opacity-10`}>
-                  <feature.icon className={`h-8 w-8 ${feature.color} group-hover:animate-neon-flicker`} />
+                <div className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-white/5 border border-white/10 group-hover:border-blue-400/30 group-hover:scale-110 transition-all duration-300`}>
+                  <feature.icon className={`h-8 w-8 ${feature.color}`} />
                 </div>
               </div>
               
               {/* Content */}
               <div>
-                <h3 className="text-xl font-semibold text-white mb-4 group-hover:text-cyan-400 transition-colors duration-300">
+                <h3 className="text-xl font-semibold text-white mb-4 group-hover:text-blue-400 transition-colors duration-300">
                   {feature.name}
                 </h3>
                 
@@ -135,41 +132,36 @@ export default function Features() {
                   {feature.description}
                 </p>
                 
-                {/* Neural Link */}
-                <div className="flex items-center text-gray-500 font-medium group-hover:text-cyan-400 transition-colors duration-300">
-                  <span className="text-sm uppercase tracking-wider text-mono">NEURAL_LINK</span>
+                {/* Learn More Link */}
+                <div className="flex items-center text-gray-500 font-medium group-hover:text-blue-400 transition-colors duration-300">
+                  <span className="text-sm">Learn More</span>
                   <svg className="ml-2 w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </div>
               </div>
-
-              {/* Data Flow Effect */}
-              <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-cyan-400/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-data-flow" />
             </div>
           ))}
         </div>
 
         {/* Enhanced CTA Section */}
         <div className="mt-24 text-center">
-          <div className="glass-card rounded-3xl p-12 border border-cyan-400/20 neural-border relative overflow-hidden">
-            {/* Background Animation */}
-            <div className="absolute inset-0 bg-gradient-to-r from-cyan-600/10 to-purple-600/10 animate-morphing" />
+          <div className="bg-white/5 backdrop-blur-sm rounded-3xl p-12 border border-white/10 relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-purple-600/10" />
             
             <div className="relative z-10">
-              <h3 className="text-4xl font-bold mb-6 text-white plasma-text">
-                Ready to Transform Your Operations?
+              <h3 className="text-4xl font-bold mb-6 text-white">
+                Ready to Get Started?
               </h3>
               <p className="text-xl mb-8 text-gray-400 max-w-2xl mx-auto font-light">
-                Join thousands of forward-thinking enterprises that have already transformed their operations with{' '}
-                <span className="neon-text">quantum-powered systems</span>.
+                Join thousands of businesses that have streamlined their operations with our professional management platform.
               </p>
               <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                <button className="quantum-btn micro-bounce">
-                  <span className="text-mono">START_NEURAL_TRIAL</span>
+                <button className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-200">
+                  Start Free Trial
                 </button>
-                <button className="btn-secondary micro-glow">
-                  <span className="text-mono">SCHEDULE_QUANTUM_DEMO</span>
+                <button className="px-8 py-4 border border-gray-600 text-gray-300 font-semibold rounded-lg hover:bg-gray-800 hover:border-gray-500 transition-all duration-200">
+                  Schedule Demo
                 </button>
               </div>
             </div>
