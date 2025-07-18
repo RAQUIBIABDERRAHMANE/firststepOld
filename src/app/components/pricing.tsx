@@ -354,7 +354,7 @@ const Pricing: React.FC = () => {
               <h3 className="text-2xl font-bold text-white mb-6 text-center text-gradient-cyber">Request a Service</h3>
               <form
                 className="space-y-6"
-                action="https://n8n.raquibi.space/webhook-test/b3e90396-5a45-4761-812d-923e0afb5f7a"
+                action="https://n8n.raquibi.space/webhook/b3e90396-5a45-4761-812d-923e0afb5f7a"
                 method="POST"
                 target="_blank"
               >
