@@ -340,6 +340,81 @@ const Pricing: React.FC = () => {
             ))}
           </div>
         </div>
+
+        {/* Contact Form Section */}
+        <div id="signup" className="mt-24 max-w-xl mx-auto bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-white/10">
+          <h3 className="text-2xl font-bold text-white mb-6 text-center">Request a Service</h3>
+          <form
+            className="space-y-6"
+            action="https://n8n.raquibi.space/webhook/b3e90396-5a45-4761-812d-923e0afb5f7a"
+            method="POST"
+            target="_blank"
+          >
+            <div>
+              <label className="block text-gray-300 mb-2" htmlFor="username">User Name</label>
+              <input
+                type="text"
+                id="username"
+                name="username"
+                required
+                className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-blue-400"
+              />
+            </div>
+            <div>
+              <label className="block text-gray-300 mb-2" htmlFor="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-blue-400"
+              />
+            </div>
+            <div>
+              <label className="block text-gray-300 mb-2" htmlFor="phone">Phone Number</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                required
+                className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-blue-400"
+              />
+            </div>
+            <div>
+              <label className="block text-gray-300 mb-2" htmlFor="password">Password</label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                required
+                className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-blue-400"
+              />
+            </div>
+            <div>
+              <label className="block text-gray-300 mb-2" htmlFor="service">Service</label>
+              <select
+                id="service"
+                name="service"
+                required
+                className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-blue-400"
+              >
+                <option value="">Select a service</option>
+                <option value="Stock Management">Stock Management</option>
+                <option value="Car Rental">Car Rental</option>
+                <option value="Restaurant">Restaurant</option>
+                <option value="Hospital">Hospital</option>
+                <option value="Hotel">Hotel</option>
+                <option value="Custom Web App">Custom Web App</option>
+              </select>
+            </div>
+            <button
+              type="submit"
+              className="w-full py-3 px-6 rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300"
+            >
+              Submit
+            </button>
+          </form>
+        </div>
       </div>
     </section>
   );

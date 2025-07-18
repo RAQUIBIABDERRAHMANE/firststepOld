@@ -78,7 +78,6 @@ export default function Navbar() {
         ? 'glass-card border-b border-cyan-400/20 shadow-lg shadow-cyan-400/10' 
         : 'bg-transparent'
     }`}>
-    suppressHydrationWarning={true}>
       <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
         {/* Logo */}
         <div className="flex lg:flex-1">
