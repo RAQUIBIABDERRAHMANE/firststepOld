@@ -103,7 +103,7 @@ export default function SignupSection() {
               Welcome to First Step!
             </h2>
             <p className="text-xl text-gray-600 mb-8">
-              Thank you for signing up. We'll be in touch with you shortly to get you started.
+              Thank you for signing up. We&apos;ll be in touch with you shortly to get you started.
             </p>
             <button
               onClick={() => setIsSuccess(false)}

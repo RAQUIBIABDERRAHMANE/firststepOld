@@ -1,6 +1,5 @@
 'use client'
 import { useState, useEffect } from "react";
-import Link from "next/link";
 import { ArrowRightIcon, PlayIcon, SparklesIcon } from "@heroicons/react/24/outline";
 
 export default function Hero() {
