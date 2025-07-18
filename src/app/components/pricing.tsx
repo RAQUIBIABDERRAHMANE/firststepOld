@@ -342,78 +342,92 @@ const Pricing: React.FC = () => {
         </div>
 
         {/* Contact Form Section */}
-        <div id="signup" className="mt-24 max-w-xl mx-auto bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-white/10">
-          <h3 className="text-2xl font-bold text-white mb-6 text-center">Request a Service</h3>
-          <form
-            className="space-y-6"
-            action="https://n8n.raquibi.space/webhook/b3e90396-5a45-4761-812d-923e0afb5f7a"
-            method="POST"
-            target="_blank"
-          >
-            <div>
-              <label className="block text-gray-300 mb-2" htmlFor="username">User Name</label>
-              <input
-                type="text"
-                id="username"
-                name="username"
-                required
-                className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-blue-400"
-              />
-            </div>
-            <div>
-              <label className="block text-gray-300 mb-2" htmlFor="email">Email</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                required
-                className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-blue-400"
-              />
-            </div>
-            <div>
-              <label className="block text-gray-300 mb-2" htmlFor="phone">Phone Number</label>
-              <input
-                type="tel"
-                id="phone"
-                name="phone"
-                required
-                className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-blue-400"
-              />
-            </div>
-            <div>
-              <label className="block text-gray-300 mb-2" htmlFor="password">Password</label>
-              <input
-                type="password"
-                id="password"
-                name="password"
-                required
-                className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-blue-400"
-              />
-            </div>
-            <div>
-              <label className="block text-gray-300 mb-2" htmlFor="service">Service</label>
-              <select
-                id="service"
-                name="service"
-                required
-                className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-blue-400"
+        <div className="relative mt-24 flex justify-center items-center min-h-[600px]">
+          {/* Animated/Gradient Background for the form */}
+          <div  className="absolute inset-0 z-0 pointer-events-none">
+            <div className="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-gradient-to-br from-blue-600/40 via-purple-600/30 to-cyan-400/30 blur-3xl animate-float" />
+            <div className="absolute bottom-0 right-0 w-80 h-80 rounded-full bg-gradient-to-tr from-purple-500/30 via-pink-400/20 to-blue-400/20 blur-2xl animate-pulse-slow" />
+            <div className="cyber-grid opacity-10 absolute inset-0" />
+          </div>
+          <div id="signup" className="relative z-10 w-full max-w-xl">
+            <div className="bg-white/10 glass-card border border-cyan-400/20 shadow-2xl shadow-cyan-400/10 rounded-2xl p-10 backdrop-blur-strong animate-fade-in-up">
+              <h3 className="text-2xl font-bold text-white mb-6 text-center text-gradient-cyber">Request a Service</h3>
+              <form
+                className="space-y-6"
+                action="https://n8n.raquibi.space/webhook-test/b3e90396-5a45-4761-812d-923e0afb5f7a"
+                method="POST"
+                target="_blank"
               >
-                <option value="">Select a service</option>
-                <option value="Stock Management">Stock Management</option>
-                <option value="Car Rental">Car Rental</option>
-                <option value="Restaurant">Restaurant</option>
-                <option value="Hospital">Hospital</option>
-                <option value="Hotel">Hotel</option>
-                <option value="Custom Web App">Custom Web App</option>
-              </select>
+                <div>
+                  <label className="block text-gray-300 mb-2" htmlFor="username">User Name</label>
+                  <input
+                    type="text"
+                    id="username"
+                    name="username"
+                    required
+                    className="w-full px-4 py-3 rounded-lg bg-white/20 border border-cyan-400/20 text-white focus:outline-none focus:ring-2 focus:ring-cyan-400/60 focus:bg-white/30 transition-all duration-300 placeholder-gray-400"
+                    placeholder="Enter your name"
+                  />
+                </div>
+                <div>
+                  <label className="block text-gray-300 mb-2" htmlFor="email">Email</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    className="w-full px-4 py-3 rounded-lg bg-white/20 border border-cyan-400/20 text-white focus:outline-none focus:ring-2 focus:ring-cyan-400/60 focus:bg-white/30 transition-all duration-300 placeholder-gray-400"
+                    placeholder="you@email.com"
+                  />
+                </div>
+                <div>
+                  <label className="block text-gray-300 mb-2" htmlFor="phone">Phone Number</label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    required
+                    className="w-full px-4 py-3 rounded-lg bg-white/20 border border-cyan-400/20 text-white focus:outline-none focus:ring-2 focus:ring-cyan-400/60 focus:bg-white/30 transition-all duration-300 placeholder-gray-400"
+                    placeholder="e.g. +1234567890"
+                  />
+                </div>
+                <div>
+                  <label className="block text-gray-300 mb-2" htmlFor="password">Password</label>
+                  <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    required
+                    className="w-full px-4 py-3 rounded-lg bg-white/20 border border-cyan-400/20 text-white focus:outline-none focus:ring-2 focus:ring-cyan-400/60 focus:bg-white/30 transition-all duration-300 placeholder-gray-400"
+                    placeholder="Create a password"
+                  />
+                </div>
+                <div>
+                  <label className="block text-gray-300 mb-2" htmlFor="service">Service</label>
+                  <select
+                    id="service"
+                    name="service"
+                    required
+                    className="w-full px-4 py-3 rounded-lg bg-white/20 border border-cyan-400/20 text-white focus:outline-none focus:ring-2 focus:ring-cyan-400/60 focus:bg-white/30 transition-all duration-300"
+                  >
+                    <option value="" className="bg-black text-white rounded-lg" >Select a service</option>
+                    <option value="Stock Management" className="bg-black text-white rounded-lg" >Stock Management</option>
+                    <option value="Car Rental" className="bg-black text-white rounded-lg" >Car Rental</option>
+                    <option value="Restaurant" className="bg-black text-white rounded-lg" >Restaurant</option>
+                    <option value="Hospital" className="bg-black text-white rounded-lg" >Hospital</option>
+                    <option value="Hotel" className="bg-black text-white rounded-lg" >Hotel</option>
+                    <option value="Custom Web App" className="bg-black text-white rounded-lg" >Custom Web App</option>
+                  </select>
+                </div>
+                <button
+                  type="submit"
+                  className="w-full py-3 px-6 rounded-lg bg-gradient-to-r from-cyan-500 via-blue-600 to-purple-600 text-white font-semibold shadow-lg hover:from-cyan-400 hover:to-purple-700 transition-all duration-300 focus:ring-4 focus:ring-cyan-400/40 focus:outline-none quantum-btn"
+                >
+                  Submit
+                </button>
+              </form>
             </div>
-            <button
-              type="submit"
-              className="w-full py-3 px-6 rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300"
-            >
-              Submit
-            </button>
-          </form>
+          </div>
         </div>
       </div>
     </section>
