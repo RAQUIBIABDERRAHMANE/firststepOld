@@ -286,12 +286,12 @@ export default function Navbar() {
                     />
                     <span className="ml-2 text-sm text-gray-300">Remember me</span>
                   </label>
-                  <button
+                  {/* <button
                     type="button"
                     className="text-sm text-cyan-400 hover:text-cyan-300 transition-colors"
                   >
                     Forgot password?
-                  </button>
+                  </button> */}
                 </div>
 
                 {/* Submit Button */}
