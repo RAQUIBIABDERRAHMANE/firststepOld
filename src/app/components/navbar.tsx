@@ -63,11 +63,10 @@ export default function Navbar() {
   ]
 
   return (
-    <header className={`fixed top-0 w-full z-50 transition-all duration-500 ${
-      mounted && scrolled 
-        ? 'bg-black/80 backdrop-blur-md border-b border-cyan-400/20 shadow-lg shadow-cyan-400/10' 
-        : 'bg-transparent'
-    }`}>
+    <header className={`fixed top-0 w-full z-50 transition-all duration-500 ${mounted && scrolled
+      ? 'bg-black/80 backdrop-blur-md border-b border-cyan-400/20 shadow-lg shadow-cyan-400/10'
+      : 'bg-transparent'
+      }`}>
       <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
         {/* Logo */}
         <div className="flex lg:flex-1">
@@ -90,7 +89,7 @@ export default function Navbar() {
             </div>
           </Link>
         </div>
-        
+
         {/* Mobile menu button */}
         <div className="flex lg:hidden">
           <button
@@ -119,18 +118,24 @@ export default function Navbar() {
 
         {/* CTA Buttons */}
         <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-4">
-                    <Link 
+          <Link
             href="#signup"
             className="px-6 py-2 text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl"
           >
             Get Started
           </Link>
-          <button
+          <Link
+            href="/signin"
+            className="px-6 py-2 text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl"
+          >
+            Sign in
+          </Link>
+          {/* <button
             onClick={() => setSignInModalOpen(true)}
             className="px-6 py-2 text-sm font-semibold text-cyan-400 border border-cyan-400/50 rounded-lg hover:bg-cyan-400/10 hover:border-cyan-400 transition-all duration-300"
           >
             Sign In
-          </button>
+          </button> */}
 
         </div>
       </nav>
@@ -165,7 +170,7 @@ export default function Navbar() {
               <XMarkIcon className="h-6 w-6" />
             </button>
           </div>
-          
+
           {/* Mobile Navigation */}
           <div className="mt-8 flow-root">
             <div className="space-y-2">
@@ -180,10 +185,10 @@ export default function Navbar() {
                 </Link>
               ))}
             </div>
-            
+
             {/* Mobile CTA Buttons */}
             <div className="mt-8 space-y-3">
-                            <Link
+              <Link
                 href="#signup"
                 className="block w-full py-3 text-center text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg"
                 onClick={() => setMobileMenuOpen(false)}
@@ -191,7 +196,14 @@ export default function Navbar() {
                 Get Started
               </Link>
 
-              <button
+              <Link
+                href="/signin"
+                className="px-6 py-2 text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl"
+              >
+                Sign in
+              </Link>
+
+              {/* <button
                 onClick={() => {
                   setSignInModalOpen(true)
                   setMobileMenuOpen(false)
@@ -199,7 +211,7 @@ export default function Navbar() {
                 className="block w-full py-3 text-center text-sm font-semibold text-cyan-400 border border-cyan-400/50 rounded-lg hover:bg-cyan-400/10 hover:border-cyan-400 transition-all duration-300"
               >
                 Sign In
-              </button>
+              </button> */}
             </div>
           </div>
         </DialogPanel>
