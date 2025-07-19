@@ -94,18 +94,19 @@ export default function Navbar() {
 
         {/* CTA Buttons */}
         <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-4">
-          <Link 
-            href="#pricing"
-            className="px-6 py-2 text-sm font-semibold text-cyan-400 border border-cyan-400/50 rounded-lg hover:bg-cyan-400/10 hover:border-cyan-400 transition-all duration-300"
-          >
-            Pricing
-          </Link>
-          <Link 
+                    <Link 
             href="#signup"
             className="px-6 py-2 text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl"
           >
             Get Started
           </Link>
+          <Link 
+            href="#pricing"
+            className="px-6 py-2 text-sm font-semibold text-cyan-400 border border-cyan-400/50 rounded-lg hover:bg-cyan-400/10 hover:border-cyan-400 transition-all duration-300"
+          >
+            Sign In
+          </Link>
+
         </div>
       </nav>
 
