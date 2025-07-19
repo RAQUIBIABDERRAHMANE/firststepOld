@@ -134,21 +134,21 @@ export default function Navbar() {
             </PopoverButton>
 
             <PopoverPanel className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-2xl glass-card border border-cyan-400/20 shadow-xl shadow-cyan-400/10 transition data-[closed]:translate-y-1 data-[closed]:opacity-0 data-[enter]:duration-200 data-[leave]:duration-150">
-              <div className="p-4">
+              <div className="p-6">
                 {features.map((item) => (
                   <div
                     key={item.name}
-                    className="group relative flex items-center gap-x-6 rounded-xl p-4 text-sm hover:bg-white/5 transition-all duration-300 card-hover"
+                    className="group relative flex items-center gap-x-6 rounded-xl p-4 text-sm hover:bg-white/10 transition-all duration-300"
                   >
-                    <div className={`flex size-11 flex-none items-center justify-center rounded-lg glass-card border border-white/10 group-hover:border-cyan-400/30 transition-all duration-300 bg-gradient-to-r ${item.gradient} bg-opacity-10`}>
+                    <div className={`flex size-12 flex-none items-center justify-center rounded-xl bg-white/5 border border-white/10 group-hover:border-cyan-400/50 transition-all duration-300`}>
                       <item.icon aria-hidden="true" className="size-6 text-gray-400 group-hover:text-cyan-400 transition-colors duration-300" />
                     </div>
                     <div className="flex-auto">
-                      <a href={item.href} className="block font-semibold text-white group-hover:text-cyan-400 transition-colors duration-300">
+                      <a href={item.href} className="block font-semibold text-white group-hover:text-cyan-400 transition-colors duration-300 text-base">
                         {item.name}
                         <span className="absolute inset-0" />
                       </a>
-                      <p className="mt-1 text-gray-400 text-xs">{item.description}</p>
+                      <p className="mt-1 text-gray-400 text-sm leading-relaxed">{item.description}</p>
                     </div>
                   </div>
                 ))}
