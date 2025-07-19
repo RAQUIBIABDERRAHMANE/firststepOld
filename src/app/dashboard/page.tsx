@@ -1,6 +1,18 @@
 "use client";
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { Bar } from 'react-chartjs-2';
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend,
+} from 'chart.js';
+
+ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
 export default function DashboardPage() {
   const router = useRouter();
@@ -74,6 +86,67 @@ export default function DashboardPage() {
     return date.toLocaleString();
   }
 
+  // Compute service stats for chart
+  const serviceStats = data.reduce((acc: Record<string, { count: number; users: Set<string> }>, row) => {
+    const service = String(row.service || 'Unknown');
+    const userKey = String(row.email || row.phone || '');
+    if (!acc[service]) acc[service] = { count: 0, users: new Set() };
+    acc[service].count++;
+    if (userKey) acc[service].users.add(userKey);
+    return acc;
+  }, {});
+  const chartLabels = Object.keys(serviceStats);
+  const chartData = {
+    labels: chartLabels,
+    datasets: [
+      {
+        label: 'Total Requests',
+        data: chartLabels.map(s => serviceStats[s].count),
+        backgroundColor: 'rgba(34,211,238,0.7)',
+        borderColor: 'rgba(34,211,238,1)',
+        borderWidth: 2,
+      },
+      {
+        label: 'Unique People',
+        data: chartLabels.map(s => serviceStats[s].users.size),
+        backgroundColor: 'rgba(168,85,247,0.7)',
+        borderColor: 'rgba(168,85,247,1)',
+        borderWidth: 2,
+      },
+    ],
+  };
+  const chartOptions = {
+    responsive: true,
+    plugins: {
+      legend: {
+        labels: { color: '#fff', font: { size: 14 } },
+      },
+      title: {
+        display: true,
+        text: 'Service Requests & Unique People',
+        color: '#fff',
+        font: { size: 20 },
+      },
+      tooltip: {
+        enabled: true,
+        backgroundColor: '#222',
+        titleColor: '#0ff',
+        bodyColor: '#fff',
+      },
+    },
+    scales: {
+      x: {
+        ticks: { color: '#fff' },
+        grid: { color: 'rgba(34,211,238,0.1)' },
+      },
+      y: {
+        beginAtZero: true,
+        ticks: { color: '#fff' },
+        grid: { color: 'rgba(34,211,238,0.1)' },
+      },
+    },
+  };
+
   return (
     <div className="relative min-h-screen flex flex-col items-center justify-start bg-black overflow-x-hidden">
       {/* Animated Background */}
@@ -90,6 +163,13 @@ export default function DashboardPage() {
         <h1 className="text-4xl font-bold mb-2 text-gradient-cyber">Dashboard</h1>
         <p className="text-lg text-gray-300 mb-2">Welcome! You are successfully signed in.</p>
         <p className="text-sm text-gray-400">Here you can view your latest service inquiries and messages.</p>
+      </div>
+      {/* Chart Section */}
+      <div className="w-screen px-0 mb-10 flex justify-center">
+        <div className="glass-card border neural-border shadow-2xl rounded-2xl p-8 backdrop-blur-strong w-full max-w-5xl">
+          <h2 className="text-2xl font-bold mb-6 text-gradient-cyber text-center">Service Statistics</h2>
+          <Bar data={chartData} options={chartOptions} height={120} />
+        </div>
       </div>
       {/* Data Table Section */}
       <div className="w-screen px-0">
