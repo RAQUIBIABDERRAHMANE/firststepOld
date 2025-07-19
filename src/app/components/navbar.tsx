@@ -304,7 +304,7 @@ export default function Navbar() {
               </form>
 
               {/* Footer */}
-              <div className="mt-6 text-center">
+              {/* <div className="mt-6 text-center">
                 <p className="text-sm text-gray-400">
                   Don't have an account?{' '}
                   <button
@@ -317,7 +317,7 @@ export default function Navbar() {
                     Sign up
                   </button>
                 </p>
-              </div>
+              </div> */}
             </div>
           </DialogPanel>
         </div>
