@@ -12,13 +12,12 @@ export default function SignInPage() {
   const router = useRouter();
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const isAuthenticated = localStorage.getItem('isAuthenticated');
-      if (isAuthenticated !== 'true') {
-        router.replace('/signin');
-      }
+    const isAuthenticated = typeof window !== 'undefined' && localStorage.getItem('isAuthenticated') === 'true';
+    if (isAuthenticated) {
+      router.replace('/dashboard');
     }
-  }, [router]);
+  }, []);
+
   useEffect(() => {
     setMounted(true);
   }, []);
