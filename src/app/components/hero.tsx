@@ -20,19 +20,23 @@ export default function Hero() {
   }, []);
 
   useEffect(() => {
+    if (!mounted) return
+    
     const interval = setInterval(() => {
       setCurrentText((prev) => (prev + 1) % texts.length);
     }, 3000);
     return () => clearInterval(interval);
-  }, [texts.length]);
+  }, [texts.length, mounted]);
 
   useEffect(() => {
+    if (!mounted) return
+    
     const handleMouseMove = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
     };
     window.addEventListener('mousemove', handleMouseMove);
     return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
+  }, [mounted]);
 
   return (
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">

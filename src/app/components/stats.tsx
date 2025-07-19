@@ -53,8 +53,15 @@ const stats: Stat[] = [
 
 function AnimatedCounter({ value, suffix = '', duration = 2000 }: AnimatedCounterProps) {
   const [count, setCount] = useState(0)
+  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  useEffect(() => {
+    if (!mounted) return
+    
     let startTime: number
     let animationFrame: number
 
@@ -71,12 +78,12 @@ function AnimatedCounter({ value, suffix = '', duration = 2000 }: AnimatedCounte
 
     animationFrame = requestAnimationFrame(animate)
     return () => cancelAnimationFrame(animationFrame)
-  }, [value, duration])
+  }, [value, duration, mounted])
 
   return (
     <span >
       {suffix === '$' && suffix}
-      {count.toLocaleString()}
+      {mounted ? count.toLocaleString() : value.toLocaleString()}
       {suffix !== '$' && suffix}
     </span>
   )
