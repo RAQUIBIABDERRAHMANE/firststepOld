@@ -190,12 +190,6 @@ export default function Navbar() {
               >
                 Get Started
               </Link>
-          <button
-            onClick={() => setSignInModalOpen(true)}
-            className="px-6 py-2 text-sm font-semibold text-cyan-400 border border-cyan-400/50 rounded-lg hover:bg-cyan-400/10 hover:border-cyan-400 transition-all duration-300"
-          >
-            Sign In
-          </button>
 
               <button
                 onClick={() => {
