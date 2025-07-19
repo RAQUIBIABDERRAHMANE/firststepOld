@@ -183,20 +183,20 @@ export default function Navbar() {
             
             {/* Mobile CTA Buttons */}
             <div className="mt-8 space-y-3">
-              <Link
-                href="#pricing"
-                className="block w-full py-3 text-center text-sm font-semibold text-cyan-400 border border-cyan-400/50 rounded-lg hover:bg-cyan-400/10 hover:border-cyan-400 transition-all duration-300"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                View Pricing
-              </Link>
-              <Link
+                            <Link
                 href="#signup"
                 className="block w-full py-3 text-center text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Get Started
               </Link>
+          <button
+            onClick={() => setSignInModalOpen(true)}
+            className="px-6 py-2 text-sm font-semibold text-cyan-400 border border-cyan-400/50 rounded-lg hover:bg-cyan-400/10 hover:border-cyan-400 transition-all duration-300"
+          >
+            Sign In
+          </button>
+
               <button
                 onClick={() => {
                   setSignInModalOpen(true)
